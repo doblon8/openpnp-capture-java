@@ -35,7 +35,7 @@ public final class CaptureDevice {
      * @return the name of the capture device.
      * @throws CaptureException if no device with the given id exists.
      */
-    public String getDeviceName(int deviceId) {
+    private String getDeviceName(int deviceId) {
         MemorySegment stringPointer = Cap_getDeviceName(context.getSegment(), deviceId);
         if (stringPointer.equals(MemorySegment.NULL)) {
             throw new CaptureException("Device id " + deviceId + " does not exist.");
@@ -51,11 +51,11 @@ public final class CaptureDevice {
      * <p>
      * If a device with the given id does not exist, null is returned.
      *
-     * @param deviceId the device id of the capture device
+     * @param deviceId the device id of the capture device.
      * @return the unique name of the capture device.
      * @throws CaptureException if no device with the given id exists.
      */
-    public String getDeviceUniqueId(int deviceId) {
+    private String getDeviceUniqueId(int deviceId) {
         MemorySegment stringPointer = Cap_getDeviceUniqueID(context.getSegment(), deviceId);
         if (stringPointer.equals(MemorySegment.NULL)) {
             throw new CaptureException("Device id " + deviceId + " does not exist.");
@@ -66,11 +66,11 @@ public final class CaptureDevice {
     /**
      * Returns the number of formats supported by a certain device.
      *
-     * @param deviceId the device id of the capture device
+     * @param deviceId the device id of the capture device.
      * @return the number of formats supported by the capture device with the given id.
      * @throws CaptureException if no device with the given id exists.
      */
-    public int getNumFormats(int deviceId) throws CaptureException {
+    private int getNumFormats(int deviceId) throws CaptureException {
         int result = Cap_getNumFormats(context.getSegment(), deviceId);
         if (result == -1) {
             throw new CaptureException("Device id " + deviceId + " does not exist.");
@@ -78,7 +78,7 @@ public final class CaptureDevice {
         return result;
     }
 
-    public CaptureFormatInfo getFormatInfo(int deviceId, int formatId) throws CaptureException {
+    private CaptureFormatInfo getFormatInfo(int deviceId, int formatId) throws CaptureException {
         try (Arena arena = Arena.ofConfined()) {
             MemorySegment formatInfoSegment = CapFormatInfo.allocate(arena);
             int result = Cap_getFormatInfo(context.getSegment(), deviceId, formatId, formatInfoSegment);
