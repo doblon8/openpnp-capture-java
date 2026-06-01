@@ -2,6 +2,9 @@ import io.github.doblon8.openpnp.capture.CaptureException;
 import io.github.doblon8.openpnp.capture.LogLevel;
 import io.github.doblon8.openpnp.capture.OpenPnpCapture;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+
 import static io.github.doblon8.openpnp.capture.OpenPnpCapture.installCustomLogFunction;
 import static io.github.doblon8.openpnp.capture.OpenPnpCapture.setLogLevel;
 
@@ -20,8 +23,17 @@ void main() {
 
         try (var stream = device.openStream(format)) {
             System.out.println("Stream is open: " + stream.isOpen());
+            TimeUnit.SECONDS.sleep(1); // wait a bit to get the webcam ready
+
+            var image = stream.capture();
+            ImageIO.write(image, "png", new File("/tmp/image.png"));
+            System.out.println("Captured image saved to /tmp/image.png");
+        } catch (InterruptedException e) {
+            System.err.println("Interrupted while waiting for webcam: " + e.getMessage());
         }
     } catch (CaptureException e) {
         System.err.println("Error using CaptureContext: " + e.getMessage());
+    } catch (IOException e) {
+        System.err.println("Error saving image: " + e.getMessage());
     }
 }
