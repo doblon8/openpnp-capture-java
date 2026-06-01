@@ -2524,73 +2524,62 @@ public class openpnp_capture extends openpnp_capture$shared {
         }
     }
 
+    private static class Cap_getLibraryVersion {
+        public static final FunctionDescriptor DESC = FunctionDescriptor.of(
+                openpnp_capture.C_POINTER
+        );
+
+        public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getLibraryVersion");
+
+        public static final MethodHandle HANDLE = Linker.nativeLinker().downcallHandle(ADDR, DESC);
+    }
+
     /**
-     * Variadic invoker class for:
-     * {@snippet lang=c :
+     * Function descriptor for:
+     * {@snippet lang = c:
      * const char *Cap_getLibraryVersion()
-     * }
+     *}
      */
-    public static class Cap_getLibraryVersion {
-        private static final FunctionDescriptor BASE_DESC = FunctionDescriptor.of(
-                openpnp_capture.C_POINTER        );
-        private static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getLibraryVersion");
+    public static FunctionDescriptor Cap_getLibraryVersion$descriptor() {
+        return Cap_getLibraryVersion.DESC;
+    }
 
-        private final MethodHandle handle;
-        private final FunctionDescriptor descriptor;
-        private final MethodHandle spreader;
+    /**
+     * Downcall method handle for:
+     * {@snippet lang = c:
+     * const char *Cap_getLibraryVersion()
+     *}
+     */
+    public static MethodHandle Cap_getLibraryVersion$handle() {
+        return Cap_getLibraryVersion.HANDLE;
+    }
 
-        private Cap_getLibraryVersion(MethodHandle handle, FunctionDescriptor descriptor, MethodHandle spreader) {
-            this.handle = handle;
-            this.descriptor = descriptor;
-            this.spreader = spreader;
-        }
+    /**
+     * Address for:
+     * {@snippet lang = c:
+     * const char *Cap_getLibraryVersion()
+     *}
+     */
+    public static MemorySegment Cap_getLibraryVersion$address() {
+        return Cap_getLibraryVersion.ADDR;
+    }
 
-        /**
-         * Variadic invoker factory for:
-         * {@snippet lang=c :
-         * const char *Cap_getLibraryVersion()
-         * }
-         */
-        public static Cap_getLibraryVersion makeInvoker(MemoryLayout... layouts) {
-            FunctionDescriptor desc$ = BASE_DESC.appendArgumentLayouts(layouts);
-            Linker.Option fva$ = Linker.Option.firstVariadicArg(BASE_DESC.argumentLayouts().size());
-            var mh$ = Linker.nativeLinker().downcallHandle(ADDR, desc$, fva$);
-            var spreader$ = mh$.asSpreader(Object[].class, layouts.length);
-            return new Cap_getLibraryVersion(mh$, desc$, spreader$);
-        }
-
-        /**
-         * {@return the address}
-         */
-        public static MemorySegment address() {
-            return ADDR;
-        }
-
-        /**
-         * {@return the specialized method handle}
-         */
-        public MethodHandle handle() {
-            return handle;
-        }
-
-        /**
-         * {@return the specialized descriptor}
-         */
-        public FunctionDescriptor descriptor() {
-            return descriptor;
-        }
-
-        public MemorySegment apply(Object... x0) {
-            try {
-                if (TRACE_DOWNCALLS) {
-                    traceDowncall("Cap_getLibraryVersion", x0);
-                }
-                return (MemorySegment) spreader.invokeExact(x0);
-            } catch(IllegalArgumentException | ClassCastException ex$)  {
-                throw ex$; // rethrow IAE from passing wrong number/type of args
-            } catch (Throwable ex$) {
-               throw new AssertionError("should not reach here", ex$);
+    /**
+     * {@snippet lang = c:
+     * const char *Cap_getLibraryVersion()
+     *}
+     */
+    public static MemorySegment Cap_getLibraryVersion() {
+        var mh$ = Cap_getLibraryVersion.HANDLE;
+        try {
+            if (TRACE_DOWNCALLS) {
+                traceDowncall("Cap_getLibraryVersion");
             }
+            return (MemorySegment) mh$.invokeExact();
+        } catch (Error | RuntimeException ex) {
+            throw ex;
+        } catch (Throwable ex$) {
+            throw new AssertionError("should not reach here", ex$);
         }
     }
     private static final long _POSIX_C_SOURCE = 200809L;

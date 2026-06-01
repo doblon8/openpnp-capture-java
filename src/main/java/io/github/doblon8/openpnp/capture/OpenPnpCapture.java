@@ -1,7 +1,6 @@
 package io.github.doblon8.openpnp.capture;
 
 import io.github.doblon8.openpnp.capture.bindings.CapCustomLogFunc;
-import io.github.doblon8.openpnp.capture.bindings.openpnp_capture.Cap_getLibraryVersion;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
@@ -38,8 +37,7 @@ public class OpenPnpCapture implements AutoCloseable {
      * @return the version of the library as a string.
      */
     public static String getLibraryVersion() {
-        var capGetLibraryVersion = Cap_getLibraryVersion.makeInvoker();
-        return capGetLibraryVersion.apply().getString(0);
+        return Cap_getLibraryVersion().getString(0);
     }
 
     /**
