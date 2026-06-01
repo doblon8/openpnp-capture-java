@@ -41,7 +41,7 @@ public final class CaptureDevice {
         if (streamId == -1) {
             throw new CaptureException("Error opening capture stream: " + streamId);
         }
-        return new CaptureStream(context, streamId);
+        return new CaptureStream(context, streamId, format);
     }
 
     /**
