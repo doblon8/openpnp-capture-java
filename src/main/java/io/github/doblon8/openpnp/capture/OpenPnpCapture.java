@@ -76,6 +76,21 @@ public class OpenPnpCapture implements AutoCloseable {
     }
 
     /**
+     * Returns the number of formats supported by a certain device.
+     *
+     * @param deviceId the device id of the capture device
+     * @return the number of formats supported by the capture device with the given id.
+     * @throws CaptureException if no device with the given id exists.
+     */
+    public int getNumFormats(int deviceId) throws CaptureException {
+        int result = Cap_getNumFormats(context.getSegment(), deviceId);
+        if (result == -1) {
+            throw new CaptureException("Device id " + deviceId + " does not exist.");
+        }
+        return result;
+    }
+
+    /**
      * Return the version of the library as a string.
      * <p>
      * In addition to a version number, this should contain information on the platform;
