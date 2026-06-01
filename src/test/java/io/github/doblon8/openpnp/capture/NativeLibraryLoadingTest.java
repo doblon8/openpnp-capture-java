@@ -2,12 +2,12 @@ package io.github.doblon8.openpnp.capture;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-class OpenPnpCaptureTest {
+class NativeLibraryLoadingTest {
 
     @Test
-    void getLibraryVersion() {
+    void shouldLoadNativeLibrary() {
         assertNotNull(OpenPnpCapture.getLibraryVersion());
     }
 }
