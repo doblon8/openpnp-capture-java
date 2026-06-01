@@ -4,9 +4,9 @@ import io.github.doblon8.openpnp.capture.bindings.CapCustomLogFunc;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
+import java.util.stream.IntStream;
 
 import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.*;
 
@@ -26,11 +26,9 @@ public class OpenPnpCapture implements AutoCloseable {
      */
     public List<CaptureDevice> getDevices() {
         int deviceCount = getDeviceCount();
-        List<CaptureDevice> devices = new ArrayList<>(deviceCount);
-        for (int i = 0; i < deviceCount; i++) {
-            devices.add(new CaptureDevice(context, i));
-        }
-        return devices;
+        return IntStream.range(0, deviceCount)
+                .mapToObj(id -> new CaptureDevice(context, id))
+                .toList();
     }
 
     /**
