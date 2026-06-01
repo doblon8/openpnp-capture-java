@@ -108,7 +108,7 @@ public class CaptureStream implements AutoCloseable {
      * @return the current value of the property.
      * @throws CaptureException if an error occurs while getting the property value.
      */
-    public int getPropertyValue(CaptureProperty property) {
+    public int getProperty(CaptureProperty property) {
         try (Arena arena = Arena.ofConfined()) {
             MemorySegment valuePointer = arena.allocate(ValueLayout.JAVA_INT);
             int result = Cap_getProperty(context.getSegment(), id, property.value(), valuePointer);
