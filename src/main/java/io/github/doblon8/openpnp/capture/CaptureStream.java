@@ -60,7 +60,7 @@ public class CaptureStream implements AutoCloseable {
      * @return true if the stream is open, false otherwise.
      */
     public boolean isOpen() {
-        var result = Cap_isOpenStream(context.getSegment(), id);
+        int result = Cap_isOpenStream(context.getSegment(), id);
         return result == 1;
     }
 
