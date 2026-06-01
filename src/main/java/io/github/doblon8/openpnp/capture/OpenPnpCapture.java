@@ -1,7 +1,6 @@
 package io.github.doblon8.openpnp.capture;
 
 import io.github.doblon8.openpnp.capture.bindings.CapCustomLogFunc;
-import io.github.doblon8.openpnp.capture.bindings.CapFormatInfo;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
@@ -29,16 +28,7 @@ public class OpenPnpCapture implements AutoCloseable {
         int deviceCount = getDeviceCount();
         List<CaptureDevice> devices = new ArrayList<>(deviceCount);
         for (int i = 0; i < deviceCount; i++) {
-            String deviceName = getDeviceName(i);
-            String deviceUniqueId = getDeviceUniqueId(i);
-
-            int numFormats = getNumFormats(i);
-            List<CaptureFormat> formats = new ArrayList<>(numFormats);
-            for (int j = 0; j < numFormats; j++) {
-                CaptureFormatInfo info = getFormatInfo(i, j);
-                formats.add(new CaptureFormat(j, info));
-            }
-            devices.add(new CaptureDevice(i, deviceName, deviceUniqueId, formats));
+            devices.add(new CaptureDevice(context, i));
         }
         return devices;
     }
@@ -52,70 +42,6 @@ public class OpenPnpCapture implements AutoCloseable {
      */
     public int getDeviceCount() {
         return Cap_getDeviceCount(context.getSegment());
-    }
-
-    /**
-     * Get the name of a capture device.
-     * <p>
-     * If a device with the given id does not exist, null is returned.
-     *
-     * @param deviceId the device id of the capture device.
-     * @return the name of the capture device.
-     * @throws CaptureException if no device with the given id exists.
-     */
-    public String getDeviceName(int deviceId) {
-        MemorySegment stringPointer = Cap_getDeviceName(context.getSegment(), deviceId);
-        if (stringPointer.equals(MemorySegment.NULL)) {
-            throw new CaptureException("Device id " + deviceId + " does not exist.");
-        }
-        return stringPointer.getString(0);
-    }
-
-    /**
-     * Get the unique name of a capture device.
-     * <p>
-     * The string contains a unique concatenation of the device name and other parameters.
-     * These parameters are platform dependent.
-     * <p>
-     * If a device with the given id does not exist, null is returned.
-     *
-     * @param deviceId the device id of the capture device
-     * @return the unique name of the capture device.
-     * @throws CaptureException if no device with the given id exists.
-     */
-    public String getDeviceUniqueId(int deviceId) {
-        MemorySegment stringPointer = Cap_getDeviceUniqueID(context.getSegment(), deviceId);
-        if (stringPointer.equals(MemorySegment.NULL)) {
-            throw new CaptureException("Device id " + deviceId + " does not exist.");
-        }
-        return stringPointer.getString(0);
-    }
-
-    /**
-     * Returns the number of formats supported by a certain device.
-     *
-     * @param deviceId the device id of the capture device
-     * @return the number of formats supported by the capture device with the given id.
-     * @throws CaptureException if no device with the given id exists.
-     */
-    public int getNumFormats(int deviceId) throws CaptureException {
-        int result = Cap_getNumFormats(context.getSegment(), deviceId);
-        if (result == -1) {
-            throw new CaptureException("Device id " + deviceId + " does not exist.");
-        }
-        return result;
-    }
-
-    public CaptureFormatInfo getFormatInfo(int deviceId, int formatId) throws CaptureException {
-        try (Arena arena = Arena.ofConfined()) {
-            MemorySegment formatInfoSegment = CapFormatInfo.allocate(arena);
-            int result = Cap_getFormatInfo(context.getSegment(), deviceId, formatId, formatInfoSegment);
-            CaptureResult captureResult = CaptureResult.values()[result];
-            if (captureResult == CaptureResult.OK) {
-                return new CaptureFormatInfo(formatInfoSegment);
-            }
-            throw new CaptureException("Failed to get format info: " + result);
-        }
     }
 
     /**

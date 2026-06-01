@@ -15,9 +15,9 @@ void main() {
     try (var capture = new OpenPnpCapture()) {
         var devices = capture.getDevices();
         for (var device : devices) {
-            System.out.println("Device ID: " + device.id() + ", Name: " + device.name() + ", Unique ID: " + device.uniqueId());
+            System.out.println("Device ID: " + device.getId() + ", Name: " + device.getName() + ", Unique ID: " + device.getUniqueId());
             System.out.println("-----");
-            var formats = device.formats();
+            var formats = device.getFormats();
             for (var format : formats) {
                 System.out.println(format);
             }
