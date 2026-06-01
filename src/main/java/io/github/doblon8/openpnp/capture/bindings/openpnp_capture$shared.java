@@ -23,7 +23,13 @@ public class openpnp_capture$shared {
     public static final ValueLayout.OfDouble C_DOUBLE = (ValueLayout.OfDouble) Linker.nativeLinker().canonicalLayouts().get("double");
     public static final AddressLayout C_POINTER = ((AddressLayout) Linker.nativeLinker().canonicalLayouts().get("void*"))
             .withTargetLayout(MemoryLayout.sequenceLayout(java.lang.Long.MAX_VALUE, C_CHAR));
-    public static final ValueLayout.OfLong C_LONG = (ValueLayout.OfLong) Linker.nativeLinker().canonicalLayouts().get("long");
+    // jextract generated C_LONG as ValueLayout.OfLong because I run it on Linux, where C "long" is 64 bits (on macOS too).
+    // But on Windows, C "long" is 32 bits, so if I'd run jextract on Windows it would have generated C_LONG as ValueLayout.OfInt instead.
+    // So in order to support all OSes, we'll use ValueLayout instead of Value.OfLong, and we'll find the correct
+    // ValueLayout type (OfLong or OfInt) at runtime, based on the size of C "long" on the current platform.
+    public static final ValueLayout C_LONG = (ValueLayout) Linker.nativeLinker()
+            .canonicalLayouts()
+            .get("long");
 
     static final boolean TRACE_DOWNCALLS = Boolean.getBoolean("jextract.trace.downcalls");
 
