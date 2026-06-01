@@ -27,6 +27,24 @@ public final class CaptureDevice {
     }
 
     /**
+     * Open a capture stream to a device with specific format requirements
+     * <p>
+     * Although the (internal) frame buffer format is set via the fourCC ID,
+     * the frames returned by Cap_captureFrame are always 24-bit RGB.
+     *
+     * @param format the format requirements for the capture stream. The format must be supported by the device,
+     *               i.e. it must be in the list of formats returned by getFormats().
+     * @return a capture stream to the device with the given format requirements.
+     */
+    public CaptureStream openStream(CaptureFormat format) {
+        int streamId = Cap_openStream(context.getSegment(), id, format.id());
+        if (streamId == -1) {
+            throw new CaptureException("Error opening capture stream: " + streamId);
+        }
+        return new CaptureStream(context, streamId);
+    }
+
+    /**
      * Get the name of a capture device.
      *
      * @param deviceId the device id of the capture device.
