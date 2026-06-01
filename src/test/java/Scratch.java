@@ -1,4 +1,5 @@
 import io.github.doblon8.openpnp.capture.CaptureException;
+import io.github.doblon8.openpnp.capture.CaptureProperty;
 import io.github.doblon8.openpnp.capture.LogLevel;
 import io.github.doblon8.openpnp.capture.OpenPnpCapture;
 
@@ -24,6 +25,12 @@ void main() {
         try (var stream = device.openStream(format)) {
             System.out.println("Stream is open: " + stream.isOpen());
             TimeUnit.SECONDS.sleep(1); // wait a bit to get the webcam ready
+
+            System.out.println("Zoom property limits: " + stream.getPropertyLimits(CaptureProperty.ZOOM));
+            System.out.println("Current zoom value: " + stream.getPropertyValue(CaptureProperty.ZOOM));
+            stream.setProperty(CaptureProperty.ZOOM, 200);
+            System.out.println("Zoom value after setting to 200: " + stream.getPropertyValue(CaptureProperty.ZOOM));
+
 
             var image = stream.capture();
             ImageIO.write(image, "png", new File("/tmp/image.png"));

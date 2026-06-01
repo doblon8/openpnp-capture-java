@@ -102,6 +102,43 @@ public class CaptureStream implements AutoCloseable {
     }
 
     /**
+     * Get the current value of a camera/stream property (e.g. zoom, exposure etc.).
+     *
+     * @param property the property to get the value for.
+     * @return the current value of the property.
+     * @throws CaptureException if an error occurs while getting the property value.
+     */
+    public int getPropertyValue(CaptureProperty property) {
+        try (Arena arena = Arena.ofConfined()) {
+            MemorySegment valuePointer = arena.allocate(ValueLayout.JAVA_INT);
+            int result = Cap_getProperty(context.getSegment(), id, property.value(), valuePointer);
+            CaptureResult captureResult = CaptureResult.values()[result];
+            return switch (captureResult) {
+                case OK -> valuePointer.get(ValueLayout.JAVA_INT, 0);
+                case PROPERTY_NOT_SUPPORTED -> throw new CaptureException("Property " + property + " is not supported by this stream.");
+                default -> throw new CaptureException("Error getting property value for property " + property + ": context, stream are invalid or value is null.");
+            };
+        }
+    }
+
+    /**
+     * Set the value of a camera/stream property (e.g. zoom, exposure etc.).
+     *
+     * @param property the property to set the value for.
+     * @param value    the value to set for the property.
+      * @throws CaptureException if an error occurs while setting the property value.
+     */
+    public void setProperty(CaptureProperty property, int value) {
+        int result =  Cap_setProperty(context.getSegment(), id, property.value(), value);
+        CaptureResult captureResult = CaptureResult.values()[result];
+        switch (captureResult) {
+            case OK -> {}
+            case PROPERTY_NOT_SUPPORTED -> throw new CaptureException("Property " + property + " is not supported by this stream.");
+            default -> throw new CaptureException("Error getting property limit for property " + property + ": context, stream are invalid.");
+        }
+    }
+
+    /**
      * Check if a stream is open, i.e. is capturing data.
      *
      * @return true if the stream is open, false otherwise.
