@@ -78,6 +78,14 @@ public final class CaptureDevice {
         return result;
     }
 
+    /**
+     * Get the format information from a device.
+     *
+     * @param deviceId the device id of the capture device.
+     * @param formatId the format id of the capture format.
+     * @return the format information of the capture format with the given id on the capture device with the given id.
+     * @throws CaptureException if no device with the given id exists, or if no format with the given id exists on the device.
+     */
     private CaptureFormatInfo getFormatInfo(int deviceId, int formatId) throws CaptureException {
         try (Arena arena = Arena.ofConfined()) {
             MemorySegment formatInfoSegment = CapFormatInfo.allocate(arena);
