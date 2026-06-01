@@ -28,8 +28,6 @@ public final class CaptureDevice {
 
     /**
      * Get the name of a capture device.
-     * <p>
-     * If a device with the given id does not exist, null is returned.
      *
      * @param deviceId the device id of the capture device.
      * @return the name of the capture device.
@@ -48,8 +46,6 @@ public final class CaptureDevice {
      * <p>
      * The string contains a unique concatenation of the device name and other parameters.
      * These parameters are platform dependent.
-     * <p>
-     * If a device with the given id does not exist, null is returned.
      *
      * @param deviceId the device id of the capture device.
      * @return the unique name of the capture device.
