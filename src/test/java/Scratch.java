@@ -14,7 +14,9 @@ void main() {
 
     try (var capture = new OpenPnpCapture()) {
         int deviceCount = capture.getDeviceCount();
+        String deviceName = capture.getDeviceName(deviceCount);
         System.out.println("Number of capture devices found: " + deviceCount);
+        System.out.println("Name of the last capture device: " + deviceName);
     } catch (CaptureException e) {
         System.err.println("Error using CaptureContext: " + e.getMessage());
     }

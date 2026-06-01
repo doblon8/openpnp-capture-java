@@ -29,6 +29,19 @@ public class OpenPnpCapture implements AutoCloseable {
     }
 
     /**
+     * Get the name of a capture device.
+     * <p>
+     * If a device with the given index does not exist, null is returned.
+     *
+     * @param index the device index of the capture device.
+     * @return the name of the capture device, or null if no device with the given index exists.
+     */
+    public String getDeviceName(int index) {
+        MemorySegment stringPointer = Cap_getDeviceName(context.getSegment(), index);
+        return stringPointer.equals(MemorySegment.NULL) ? null : stringPointer.getString(0);
+    }
+
+    /**
      * Return the version of the library as a string.
      * <p>
      * In addition to a version number, this should contain information on the platform;
