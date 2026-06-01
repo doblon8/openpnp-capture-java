@@ -2,6 +2,8 @@
 
 package io.github.doblon8.openpnp.capture.bindings;
 
+import io.github.doblon8.openpnp.capture.utils.NativeLoader;
+
 import java.lang.invoke.*;
 import java.lang.foreign.*;
 import java.util.*;
@@ -18,9 +20,16 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     static final Arena LIBRARY_ARENA = Arena.ofAuto();
 
-    static final SymbolLookup SYMBOL_LOOKUP = SymbolLookup.libraryLookup(System.mapLibraryName("/tmp/openpnp-capture-0.0.30-1/build/libopenpnp-capture.so"), LIBRARY_ARENA)
-            .or(SymbolLookup.loaderLookup())
-            .or(Linker.nativeLinker().defaultLookup());
+    static final SymbolLookup SYMBOL_LOOKUP;
+
+    static {
+        try {
+            System.loadLibrary("openpnp-capture");
+        } catch (Throwable t) {
+            NativeLoader.loadOpenpnpCapture(); // Fallback to bundled library
+        }
+        SYMBOL_LOOKUP = SymbolLookup.loaderLookup().or(Linker.nativeLinker().defaultLookup());
+    }
 
     private static final int _STDINT_H = (int)1L;
     /**
