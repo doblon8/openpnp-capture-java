@@ -1,4 +1,5 @@
 import io.github.doblon8.openpnp.capture.CaptureContext;
+import io.github.doblon8.openpnp.capture.CaptureException;
 import io.github.doblon8.openpnp.capture.LogLevel;
 import io.github.doblon8.openpnp.capture.OpenPnpCapture;
 
@@ -12,6 +13,9 @@ void main() {
     setLogLevel(LogLevel.VERBOSE);
     installCustomLogFunction((logLevel, message) -> System.out.println("Custom Log [" + logLevel + "]: " + message));
 
-    var context = new CaptureContext();
-    var result = context.releaseContext();
+    try (var context = new CaptureContext()) {
+        System.out.println("CaptureContext created successfully.");
+    } catch (CaptureException e) {
+        System.err.println("Error using CaptureContext: " + e.getMessage());
+    }
 }

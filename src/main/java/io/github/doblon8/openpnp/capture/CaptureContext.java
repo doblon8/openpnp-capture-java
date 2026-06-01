@@ -5,7 +5,7 @@ import java.lang.foreign.MemorySegment;
 import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.Cap_createContext;
 import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.Cap_releaseContext;
 
-public final class CaptureContext {
+public final class CaptureContext implements AutoCloseable {
 
     private final MemorySegment segment;
 
@@ -13,8 +13,16 @@ public final class CaptureContext {
         segment = Cap_createContext();
     }
 
-    public CaptureResult releaseContext() {
+    @Override
+    public void close() throws CaptureException{
         int result = Cap_releaseContext(segment);
-        return CaptureResult.values()[result];
+        CaptureResult captureResult = CaptureResult.values()[result];
+        switch (captureResult) {
+            case OK -> {
+                // Context released successfully
+            }
+            case ERROR -> throw new CaptureException("Error releasing capture context.");
+            default -> throw new CaptureException("Failed to release capture context: " + result);
+        }
     }
 }
