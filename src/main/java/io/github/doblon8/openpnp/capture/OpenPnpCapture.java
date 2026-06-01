@@ -51,12 +51,16 @@ public class OpenPnpCapture implements AutoCloseable {
      * <p>
      * If a device with the given id does not exist, null is returned.
      *
-     * @param id the device id of the capture device.
-     * @return the name of the capture device, or null if no device with the given id exists.
+     * @param deviceId the device id of the capture device.
+     * @return the name of the capture device.
+     * @throws CaptureException if no device with the given id exists.
      */
-    public String getDeviceName(int id) {
-        MemorySegment stringPointer = Cap_getDeviceName(context.getSegment(), id);
-        return stringPointer.equals(MemorySegment.NULL) ? null : stringPointer.getString(0);
+    public String getDeviceName(int deviceId) {
+        MemorySegment stringPointer = Cap_getDeviceName(context.getSegment(), deviceId);
+        if (stringPointer.equals(MemorySegment.NULL)) {
+            throw new CaptureException("Device id " + deviceId + " does not exist.");
+        }
+        return stringPointer.getString(0);
     }
 
     /**
@@ -67,12 +71,16 @@ public class OpenPnpCapture implements AutoCloseable {
      * <p>
      * If a device with the given id does not exist, null is returned.
      *
-     * @param id the device id of the capture device
-     * @return the unique name of the capture device, or null if no device with the given id exists.
+     * @param deviceId the device id of the capture device
+     * @return the unique name of the capture device.
+     * @throws CaptureException if no device with the given id exists.
      */
-    public String getDeviceUniqueId(int id) {
-        MemorySegment stringPointer = Cap_getDeviceUniqueID(context.getSegment(), id);
-        return stringPointer.equals(MemorySegment.NULL) ? null : stringPointer.getString(0);
+    public String getDeviceUniqueId(int deviceId) {
+        MemorySegment stringPointer = Cap_getDeviceUniqueID(context.getSegment(), deviceId);
+        if (stringPointer.equals(MemorySegment.NULL)) {
+            throw new CaptureException("Device id " + deviceId + " does not exist.");
+        }
+        return stringPointer.getString(0);
     }
 
     /**
