@@ -31,7 +31,14 @@ public class OpenPnpCapture implements AutoCloseable {
         for (int i = 0; i < deviceCount; i++) {
             String deviceName = getDeviceName(i);
             String deviceUniqueId = getDeviceUniqueId(i);
-            devices.add(new CaptureDevice(i, deviceName, deviceUniqueId));
+
+            int numFormats = getNumFormats(i);
+            List<CaptureFormat> formats = new ArrayList<>(numFormats);
+            for (int j = 0; j < numFormats; j++) {
+                CaptureFormatInfo info = getFormatInfo(i, j);
+                formats.add(new CaptureFormat(j, info));
+            }
+            devices.add(new CaptureDevice(i, deviceName, deviceUniqueId, formats));
         }
         return devices;
     }

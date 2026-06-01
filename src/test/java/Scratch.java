@@ -9,19 +9,18 @@ void main() {
     var version = OpenPnpCapture.getLibraryVersion();
     System.out.println("OpenPnP Capture Library Version: " + version);
 
-    setLogLevel(LogLevel.VERBOSE);
+    setLogLevel(LogLevel.DEBUG);
     installCustomLogFunction((logLevel, message) -> System.out.println("Custom Log [" + logLevel + "]: " + message));
 
     try (var capture = new OpenPnpCapture()) {
         var devices = capture.getDevices();
         for (var device : devices) {
-            System.out.println("Device id: " + device.id());
-            System.out.println("Device name: " + device.name());
-            System.out.println("Device unique id: " + device.uniqueId());
-            var numFormats = capture.getNumFormats(device.id());
-            System.out.println("Number of formats: " + numFormats);
-            var firstFormatInfo = capture.getFormatInfo(device.id(), 0);
-            System.out.println("Capture format info: " + firstFormatInfo);
+            System.out.println("Device ID: " + device.id() + ", Name: " + device.name() + ", Unique ID: " + device.uniqueId());
+            System.out.println("-----");
+            var formats = device.formats();
+            for (var format : formats) {
+                System.out.println(format);
+            }
         }
     } catch (CaptureException e) {
         System.err.println("Error using CaptureContext: " + e.getMessage());
