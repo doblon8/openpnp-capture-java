@@ -25,8 +25,12 @@ public class openpnp_capture extends openpnp_capture$shared {
     static {
         try {
             System.loadLibrary("openpnp-capture");
-        } catch (Throwable t) {
-            NativeLoader.loadOpenpnpCapture(); // Fallback to bundled library
+        } catch (UnsatisfiedLinkError e) {
+            try {
+                NativeLoader.loadOpenpnpCapture(); // Fallback to bundled library
+            } catch (Exception | UnsatisfiedLinkError e2) {
+                // Library may already be loaded via System.load() by the caller
+            }
         }
         SYMBOL_LOOKUP = SymbolLookup.loaderLookup().or(Linker.nativeLinker().defaultLookup());
     }
