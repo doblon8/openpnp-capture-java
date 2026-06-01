@@ -65,6 +65,15 @@ public class CaptureStream implements AutoCloseable {
     }
 
     /**
+     * Get the number of frames captured during the lifetime of the stream.
+     *
+     * @return the number of frames captured during the lifetime of the stream.
+     */
+    public int getStreamFrameCount() {
+        return Cap_getStreamFrameCount(context.getSegment(), id);
+    }
+
+    /**
      * Check if a stream is open, i.e. is capturing data.
      *
      * @return true if the stream is open, false otherwise.
