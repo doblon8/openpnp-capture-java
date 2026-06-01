@@ -1,6 +1,7 @@
 package io.github.doblon8.openpnp.capture;
 
 import io.github.doblon8.openpnp.capture.bindings.CapCustomLogFunc;
+import io.github.doblon8.openpnp.capture.bindings.CapFormatInfo;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
@@ -96,6 +97,18 @@ public class OpenPnpCapture implements AutoCloseable {
             throw new CaptureException("Device id " + deviceId + " does not exist.");
         }
         return result;
+    }
+
+    public CaptureFormatInfo getFormatInfo(int deviceId, int formatId) throws CaptureException {
+        try (Arena arena = Arena.ofConfined()) {
+            MemorySegment formatInfoSegment = CapFormatInfo.allocate(arena);
+            int result = Cap_getFormatInfo(context.getSegment(), deviceId, formatId, formatInfoSegment);
+            CaptureResult captureResult = CaptureResult.values()[result];
+            if (captureResult == CaptureResult.OK) {
+                return new CaptureFormatInfo(formatInfoSegment);
+            }
+            throw new CaptureException("Failed to get format info: " + result);
+        }
     }
 
     /**

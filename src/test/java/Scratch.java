@@ -18,7 +18,10 @@ void main() {
             System.out.println("Device id: " + device.id());
             System.out.println("Device name: " + device.name());
             System.out.println("Device unique id: " + device.uniqueId());
-            System.out.println("Number of formats: " + capture.getNumFormats(device.id()));
+            var numFormats = capture.getNumFormats(device.id());
+            System.out.println("Number of formats: " + numFormats);
+            var firstFormatInfo = capture.getFormatInfo(device.id(), 0);
+            System.out.println("Capture format info: " + firstFormatInfo);
         }
     } catch (CaptureException e) {
         System.err.println("Error using CaptureContext: " + e.getMessage());
