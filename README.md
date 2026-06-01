@@ -2,6 +2,24 @@
 
 Java Foreign Function & Memory bindings for [openpnp-capture](https://github.com/openpnp/openpnp-capture).
 
+## Installation
+
+`openpnp-capture-java` is available from Maven Central.
+
+To add `openpnp-capture-java` as a dependency using Maven, include the following in your `pom.xml`:
+
+```xml
+<dependency>
+  <groupId>io.github.doblon8</groupId>
+  <artifactId>openpnp-capture-java</artifactId>
+  <version>0.0.1</version>
+</dependency>
+```
+
+For other build tools, retrieve the dependency from Maven Central using the same coordinates.
+
+`openpnp-capture-java` bundles the native `openpnp-capture` library for supported platforms, so no system-wide installation is required.
+
 ## Example
 
 ```java
