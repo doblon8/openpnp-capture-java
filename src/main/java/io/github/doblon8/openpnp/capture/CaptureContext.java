@@ -22,7 +22,7 @@ public final class CaptureContext implements AutoCloseable {
         }
     }
 
-    public MemorySegment getSegment() {
+    MemorySegment getSegment() {
         return segment;
     }
 }
