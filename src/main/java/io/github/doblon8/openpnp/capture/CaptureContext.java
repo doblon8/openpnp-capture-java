@@ -13,7 +13,8 @@ public final class CaptureContext {
         segment = Cap_createContext();
     }
 
-    public int releaseContext() {
-        return Cap_releaseContext(segment);
+    public CaptureResult releaseContext() {
+        int result = Cap_releaseContext(segment);
+        return CaptureResult.values()[result];
     }
 }
