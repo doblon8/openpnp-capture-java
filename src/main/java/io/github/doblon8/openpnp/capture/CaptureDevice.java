@@ -4,8 +4,8 @@ import io.github.doblon8.openpnp.capture.bindings.CapFormatInfo;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.*;
 
@@ -21,10 +21,9 @@ public final class CaptureDevice {
         this.id = deviceId;
         this.name = getDeviceName(deviceId);
         this.uniqueId = getDeviceUniqueId(deviceId);
-        this.formats = new ArrayList<>();
-        for (int i = 0; i < getNumFormats(deviceId); i++) {
-            formats.add(new CaptureFormat(i, getFormatInfo(deviceId, i)));
-        }
+        this.formats = IntStream.range(0, getNumFormats(deviceId))
+                .mapToObj(formatId -> new CaptureFormat(formatId, getFormatInfo(deviceId, formatId)))
+                .toList();
     }
 
     /**
