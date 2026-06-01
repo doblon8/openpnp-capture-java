@@ -24,8 +24,8 @@ public class CaptureStream implements AutoCloseable {
      * @return a BufferedImage containing the captured frame.
      */
     public BufferedImage capture() {
-        int width = format.info().width();
-        int height = format.info().height();
+        int width = format.formatInfo().width();
+        int height = format.formatInfo().height();
         byte[] bytes;
 
         try (Arena arena = Arena.ofConfined()) {
