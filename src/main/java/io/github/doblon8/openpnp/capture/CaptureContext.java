@@ -17,12 +17,8 @@ public final class CaptureContext implements AutoCloseable {
     public void close() throws CaptureException{
         int result = Cap_releaseContext(segment);
         CaptureResult captureResult = CaptureResult.values()[result];
-        switch (captureResult) {
-            case OK -> {
-                // Context released successfully
-            }
-            case ERROR -> throw new CaptureException("Error releasing capture context.");
-            default -> throw new CaptureException("Failed to release capture context: " + result);
+        if (captureResult != CaptureResult.OK) {
+            throw new CaptureException("Error releasing capture context: " + result);
         }
     }
 
