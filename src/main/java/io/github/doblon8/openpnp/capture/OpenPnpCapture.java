@@ -4,6 +4,8 @@ import io.github.doblon8.openpnp.capture.bindings.CapCustomLogFunc;
 
 import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.BiConsumer;
 
 import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.*;
@@ -15,6 +17,21 @@ public class OpenPnpCapture implements AutoCloseable {
 
     public OpenPnpCapture() {
         this.context = new CaptureContext();
+    }
+
+    /**
+     * Get a list of capture devices on the system.
+     *
+     * @return a list of capture devices on the system.
+     */
+    public List<CaptureDevice> getDevices() {
+        int deviceCount = getDeviceCount();
+        List<CaptureDevice> devices = new ArrayList<>(deviceCount);
+        for (int i = 0; i < deviceCount; i++) {
+            String deviceName = getDeviceName(i);
+            devices.add(new CaptureDevice(i, deviceName));
+        }
+        return devices;
     }
 
     /**
@@ -31,13 +48,13 @@ public class OpenPnpCapture implements AutoCloseable {
     /**
      * Get the name of a capture device.
      * <p>
-     * If a device with the given index does not exist, null is returned.
+     * If a device with the given id does not exist, null is returned.
      *
-     * @param index the device index of the capture device.
-     * @return the name of the capture device, or null if no device with the given index exists.
+     * @param id the device id of the capture device.
+     * @return the name of the capture device, or null if no device with the given id exists.
      */
-    public String getDeviceName(int index) {
-        MemorySegment stringPointer = Cap_getDeviceName(context.getSegment(), index);
+    public String getDeviceName(int id) {
+        MemorySegment stringPointer = Cap_getDeviceName(context.getSegment(), id);
         return stringPointer.equals(MemorySegment.NULL) ? null : stringPointer.getString(0);
     }
 

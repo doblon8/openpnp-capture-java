@@ -13,10 +13,10 @@ void main() {
     installCustomLogFunction((logLevel, message) -> System.out.println("Custom Log [" + logLevel + "]: " + message));
 
     try (var capture = new OpenPnpCapture()) {
-        int deviceCount = capture.getDeviceCount();
-        String deviceName = capture.getDeviceName(deviceCount);
-        System.out.println("Number of capture devices found: " + deviceCount);
-        System.out.println("Name of the last capture device: " + deviceName);
+        var devices = capture.getDevices();
+        for (var device : devices) {
+            System.out.println("Device " + device.id() + ": " + device.name());
+        }
     } catch (CaptureException e) {
         System.err.println("Error using CaptureContext: " + e.getMessage());
     }
