@@ -43,18 +43,6 @@ public class OpenPnpCapture implements AutoCloseable {
     }
 
     /**
-     * Return the version of the library as a string.
-     * <p>
-     * In addition to a version number, this should contain information on the platform;
-     * e.g. Win32/Win64/Linux32/Linux64/OSX etc., whether or not it is a release or debug build, and the build date.
-     *
-     * @return the version of the library as a string.
-     */
-    public static String getLibraryVersion() {
-        return Cap_getLibraryVersion().getString(0);
-    }
-
-    /**
      * Set the logging level.
      *
      * @param level the logging level to set. Log messages with a level below this will be ignored.
@@ -75,6 +63,18 @@ public class OpenPnpCapture implements AutoCloseable {
         Cap_installCustomLogFunction(functionPointer);
     }
 
+    /**
+     * Return the version of the library as a string.
+     * <p>
+     * In addition to a version number, this should contain information on the platform;
+     * e.g. Win32/Win64/Linux32/Linux64/OSX etc., whether or not it is a release or debug build, and the build date.
+     *
+     * @return the version of the library as a string.
+     */
+    public static String getLibraryVersion() {
+        return Cap_getLibraryVersion().getString(0);
+    }
+    
     @Override
     public void close() throws CaptureException {
         context.close();
