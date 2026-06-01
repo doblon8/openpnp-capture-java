@@ -55,6 +55,16 @@ public class CaptureStream implements AutoCloseable {
     }
 
     /**
+     * Check if a new frame has been captured.
+     *
+     * @return true if a new frame has been captured, false otherwise.
+     */
+    public boolean hasNewFrame() {
+        int result = Cap_hasNewFrame(context.getSegment(), id);
+        return result == 1;
+    }
+
+    /**
      * Check if a stream is open, i.e. is capturing data.
      *
      * @return true if the stream is open, false otherwise.
