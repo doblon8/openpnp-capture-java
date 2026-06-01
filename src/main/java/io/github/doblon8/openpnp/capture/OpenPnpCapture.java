@@ -1,6 +1,9 @@
 package io.github.doblon8.openpnp.capture;
 
+import io.github.doblon8.openpnp.capture.bindings.CapCustomLogFunc;
 import io.github.doblon8.openpnp.capture.bindings.openpnp_capture.Cap_getLibraryVersion;
+
+import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.Cap_setLogLevel;
 
 public class OpenPnpCapture {
 
@@ -15,5 +18,14 @@ public class OpenPnpCapture {
     public static String getLibraryVersion() {
         var capGetLibraryVersion = Cap_getLibraryVersion.makeInvoker();
         return capGetLibraryVersion.apply().getString(0);
+    }
+
+    /**
+     * Set the logging level.
+     *
+     * @param level the logging level to set. Log messages with a level below this will be ignored.
+     */
+    public static void setLogLevel(LogLevel level) {
+        Cap_setLogLevel(level.ordinal());
     }
 }
