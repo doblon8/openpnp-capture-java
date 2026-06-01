@@ -25,4 +25,8 @@ public final class CaptureContext implements AutoCloseable {
             default -> throw new CaptureException("Failed to release capture context: " + result);
         }
     }
+
+    public MemorySegment getSegment() {
+        return segment;
+    }
 }

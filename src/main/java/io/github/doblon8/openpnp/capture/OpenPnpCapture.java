@@ -7,12 +7,27 @@ import java.lang.foreign.Arena;
 import java.lang.foreign.MemorySegment;
 import java.util.function.BiConsumer;
 
-import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.Cap_installCustomLogFunction;
-import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.Cap_setLogLevel;
+import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.*;
 
-public class OpenPnpCapture {
+public class OpenPnpCapture implements AutoCloseable {
 
+    private final CaptureContext context;
     private static final Arena arena = Arena.ofAuto();
+
+    public OpenPnpCapture() {
+        this.context = new CaptureContext();
+    }
+
+    /**
+     * Get the number of capture devices on the system.
+     * <p>
+     * Note: this can change dynamically due to the plugging and unplugging of USB devices.
+     *
+     * @return the number of capture devices found.
+     */
+    public int getDeviceCount() {
+        return Cap_getDeviceCount(context.getSegment());
+    }
 
     /**
      * Return the version of the library as a string.
@@ -46,5 +61,10 @@ public class OpenPnpCapture {
         MemorySegment functionPointer = CapCustomLogFunc.allocate((level, stringPointer) ->
                 logFunction.accept(LogLevel.values()[level], stringPointer.getString(0)), arena);
         Cap_installCustomLogFunction(functionPointer);
+    }
+
+    @Override
+    public void close() throws CaptureException {
+        context.close();
     }
 }
