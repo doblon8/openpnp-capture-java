@@ -74,6 +74,34 @@ public class CaptureStream implements AutoCloseable {
     }
 
     /**
+     * Get the min/max limits and the default value of a camera/stream property (e.g. zoom, exposure etc.).
+     *
+     * @param property the property to get the limits for.
+     * @return a PropertyLimits object containing the min/max limits and the default value of the property.
+     * @throws CaptureException if an error occurs while getting the property limits.
+     */
+    public PropertyLimits getPropertyLimits(CaptureProperty property) {
+        try (Arena arena = Arena.ofConfined()) {
+            MemorySegment minPointer = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment maxPointer = arena.allocate(ValueLayout.JAVA_INT);
+            MemorySegment defaultValuePointer = arena.allocate(ValueLayout.JAVA_INT);
+
+            int result = Cap_getPropertyLimits(context.getSegment(), id, property.value(), minPointer, maxPointer, defaultValuePointer);
+            CaptureResult captureResult = CaptureResult.values()[result];
+            return switch (captureResult) {
+                case OK -> new PropertyLimits(
+                        minPointer.get(ValueLayout.JAVA_INT, 0),
+                        maxPointer.get(ValueLayout.JAVA_INT, 0),
+                        defaultValuePointer.get(ValueLayout.JAVA_INT, 0)
+                );
+                case PROPERTY_NOT_SUPPORTED ->
+                        throw new CaptureException("Property " + property + " is not supported by this stream.");
+                default -> throw new CaptureException("Error getting property limit for property " + property + ": context, stream are invalid.");
+            };
+        }
+    }
+
+    /**
      * Check if a stream is open, i.e. is capturing data.
      *
      * @return true if the stream is open, false otherwise.
