@@ -139,6 +139,43 @@ public class CaptureStream implements AutoCloseable {
     }
 
     /**
+     * Get the automatic flag of a camera/stream property (e.g. zoom, focus etc.).
+     *
+     * @param property the property to get the automatic flag for.
+     * @return true if the property is set to automatic, false if it is set to manual.
+     * @throws CaptureException if an error occurs while getting the auto property value.
+     */
+    public boolean getAutoProperty(CaptureProperty property) {
+        try (Arena arena = Arena.ofConfined()) {
+            MemorySegment valuePointer = arena.allocate(ValueLayout.JAVA_INT);
+            int result = Cap_getAutoProperty(context.getSegment(), id, property.value(), valuePointer);
+            CaptureResult captureResult = CaptureResult.values()[result];
+            return switch (captureResult) {
+                case OK -> valuePointer.get(ValueLayout.JAVA_INT, 0) == 1;
+                case PROPERTY_NOT_SUPPORTED -> throw new CaptureException("Property " + property + " is not supported by this stream.");
+                default -> throw new CaptureException("Error getting auto property value for property " + property + ": context, stream are invalid.");
+            };
+        }
+    }
+
+    /**
+     * Set the automatic flag of a camera/stream property (e.g. zoom, focus etc.).
+     *
+     * @param property the property to set the automatic flag for.
+     * @param enable   true to set the property to automatic, false to set it to manual.
+     * @throws CaptureException if an error occurs while setting the auto property value.
+     */
+    public void setAutoProperty(CaptureProperty property, boolean enable) {
+            int result = Cap_setAutoProperty(context.getSegment(), id, property.value(), enable ? 1 : 0);
+            CaptureResult captureResult = CaptureResult.values()[result];
+            switch (captureResult) {
+                case OK -> {}
+                case PROPERTY_NOT_SUPPORTED -> throw new CaptureException("Property " + property + " is not supported by this stream.");
+                default -> throw new CaptureException("Error setting auto property value for property " + property + ": context, stream are invalid.");
+            }
+    }
+
+    /**
      * Check if a stream is open, i.e. is capturing data.
      *
      * @return true if the stream is open, false otherwise.
