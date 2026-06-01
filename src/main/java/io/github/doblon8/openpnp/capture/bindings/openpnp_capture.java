@@ -6,9 +6,6 @@ import io.github.doblon8.openpnp.capture.utils.NativeLoader;
 
 import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.util.*;
-import java.util.function.*;
-import java.util.stream.*;
 
 import static java.lang.foreign.ValueLayout.*;
 
@@ -35,1270 +32,1422 @@ public class openpnp_capture extends openpnp_capture$shared {
         SYMBOL_LOOKUP = SymbolLookup.loaderLookup().or(Linker.nativeLinker().defaultLookup());
     }
 
-    private static final int _STDINT_H = (int)1L;
+    private static final int _STDINT_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _STDINT_H 1
-     * }
+     *}
      */
     public static int _STDINT_H() {
         return _STDINT_H;
     }
-    private static final int _FEATURES_H = (int)1L;
+
+    private static final int _FEATURES_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _FEATURES_H 1
-     * }
+     *}
      */
     public static int _FEATURES_H() {
         return _FEATURES_H;
     }
-    private static final int _DEFAULT_SOURCE = (int)1L;
+
+    private static final int _DEFAULT_SOURCE = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _DEFAULT_SOURCE 1
-     * }
+     *}
      */
     public static int _DEFAULT_SOURCE() {
         return _DEFAULT_SOURCE;
     }
-    private static final int __GLIBC_USE_ISOC2Y = (int)0L;
+
+    private static final int __GLIBC_USE_ISOC2Y = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_ISOC2Y 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_ISOC2Y() {
         return __GLIBC_USE_ISOC2Y;
     }
-    private static final int __GLIBC_USE_ISOC23 = (int)0L;
+
+    private static final int __GLIBC_USE_ISOC23 = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_ISOC23 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_ISOC23() {
         return __GLIBC_USE_ISOC23;
     }
-    private static final int __USE_ISOC11 = (int)1L;
+
+    private static final int __USE_ISOC11 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_ISOC11 1
-     * }
+     *}
      */
     public static int __USE_ISOC11() {
         return __USE_ISOC11;
     }
-    private static final int __USE_ISOC99 = (int)1L;
+
+    private static final int __USE_ISOC99 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_ISOC99 1
-     * }
+     *}
      */
     public static int __USE_ISOC99() {
         return __USE_ISOC99;
     }
-    private static final int __USE_ISOC95 = (int)1L;
+
+    private static final int __USE_ISOC95 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_ISOC95 1
-     * }
+     *}
      */
     public static int __USE_ISOC95() {
         return __USE_ISOC95;
     }
-    private static final int __USE_POSIX_IMPLICITLY = (int)1L;
+
+    private static final int __USE_POSIX_IMPLICITLY = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_POSIX_IMPLICITLY 1
-     * }
+     *}
      */
     public static int __USE_POSIX_IMPLICITLY() {
         return __USE_POSIX_IMPLICITLY;
     }
-    private static final int _POSIX_SOURCE = (int)1L;
+
+    private static final int _POSIX_SOURCE = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _POSIX_SOURCE 1
-     * }
+     *}
      */
     public static int _POSIX_SOURCE() {
         return _POSIX_SOURCE;
     }
-    private static final int __USE_POSIX = (int)1L;
+
+    private static final int __USE_POSIX = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_POSIX 1
-     * }
+     *}
      */
     public static int __USE_POSIX() {
         return __USE_POSIX;
     }
-    private static final int __USE_POSIX2 = (int)1L;
+
+    private static final int __USE_POSIX2 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_POSIX2 1
-     * }
+     *}
      */
     public static int __USE_POSIX2() {
         return __USE_POSIX2;
     }
-    private static final int __USE_POSIX199309 = (int)1L;
+
+    private static final int __USE_POSIX199309 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_POSIX199309 1
-     * }
+     *}
      */
     public static int __USE_POSIX199309() {
         return __USE_POSIX199309;
     }
-    private static final int __USE_POSIX199506 = (int)1L;
+
+    private static final int __USE_POSIX199506 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_POSIX199506 1
-     * }
+     *}
      */
     public static int __USE_POSIX199506() {
         return __USE_POSIX199506;
     }
-    private static final int __USE_XOPEN2K = (int)1L;
+
+    private static final int __USE_XOPEN2K = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_XOPEN2K 1
-     * }
+     *}
      */
     public static int __USE_XOPEN2K() {
         return __USE_XOPEN2K;
     }
-    private static final int __USE_XOPEN2K8 = (int)1L;
+
+    private static final int __USE_XOPEN2K8 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_XOPEN2K8 1
-     * }
+     *}
      */
     public static int __USE_XOPEN2K8() {
         return __USE_XOPEN2K8;
     }
-    private static final int _ATFILE_SOURCE = (int)1L;
+
+    private static final int _ATFILE_SOURCE = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _ATFILE_SOURCE 1
-     * }
+     *}
      */
     public static int _ATFILE_SOURCE() {
         return _ATFILE_SOURCE;
     }
-    private static final int __WORDSIZE = (int)64L;
+
+    private static final int __WORDSIZE = (int) 64L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __WORDSIZE 64
-     * }
+     *}
      */
     public static int __WORDSIZE() {
         return __WORDSIZE;
     }
-    private static final int __WORDSIZE_TIME64_COMPAT32 = (int)1L;
+
+    private static final int __WORDSIZE_TIME64_COMPAT32 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __WORDSIZE_TIME64_COMPAT32 1
-     * }
+     *}
      */
     public static int __WORDSIZE_TIME64_COMPAT32() {
         return __WORDSIZE_TIME64_COMPAT32;
     }
-    private static final int __SYSCALL_WORDSIZE = (int)64L;
+
+    private static final int __SYSCALL_WORDSIZE = (int) 64L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __SYSCALL_WORDSIZE 64
-     * }
+     *}
      */
     public static int __SYSCALL_WORDSIZE() {
         return __SYSCALL_WORDSIZE;
     }
-    private static final int __USE_TIME_BITS64 = (int)1L;
+
+    private static final int __USE_TIME_BITS64 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_TIME_BITS64 1
-     * }
+     *}
      */
     public static int __USE_TIME_BITS64() {
         return __USE_TIME_BITS64;
     }
-    private static final int __USE_MISC = (int)1L;
+
+    private static final int __USE_MISC = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_MISC 1
-     * }
+     *}
      */
     public static int __USE_MISC() {
         return __USE_MISC;
     }
-    private static final int __USE_ATFILE = (int)1L;
+
+    private static final int __USE_ATFILE = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_ATFILE 1
-     * }
+     *}
      */
     public static int __USE_ATFILE() {
         return __USE_ATFILE;
     }
-    private static final int __USE_FORTIFY_LEVEL = (int)0L;
+
+    private static final int __USE_FORTIFY_LEVEL = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __USE_FORTIFY_LEVEL 0
-     * }
+     *}
      */
     public static int __USE_FORTIFY_LEVEL() {
         return __USE_FORTIFY_LEVEL;
     }
-    private static final int __GLIBC_USE_DEPRECATED_GETS = (int)0L;
+
+    private static final int __GLIBC_USE_DEPRECATED_GETS = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_DEPRECATED_GETS 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_DEPRECATED_GETS() {
         return __GLIBC_USE_DEPRECATED_GETS;
     }
-    private static final int __GLIBC_USE_DEPRECATED_SCANF = (int)0L;
+
+    private static final int __GLIBC_USE_DEPRECATED_SCANF = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_DEPRECATED_SCANF 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_DEPRECATED_SCANF() {
         return __GLIBC_USE_DEPRECATED_SCANF;
     }
-    private static final int __GLIBC_USE_C23_STRTOL = (int)0L;
+
+    private static final int __GLIBC_USE_C23_STRTOL = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_C23_STRTOL 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_C23_STRTOL() {
         return __GLIBC_USE_C23_STRTOL;
     }
-    private static final int _STDC_PREDEF_H = (int)1L;
+
+    private static final int _STDC_PREDEF_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _STDC_PREDEF_H 1
-     * }
+     *}
      */
     public static int _STDC_PREDEF_H() {
         return _STDC_PREDEF_H;
     }
-    private static final int __STDC_IEC_559__ = (int)1L;
+
+    private static final int __STDC_IEC_559__ = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __STDC_IEC_559__ 1
-     * }
+     *}
      */
     public static int __STDC_IEC_559__() {
         return __STDC_IEC_559__;
     }
-    private static final int __STDC_IEC_559_COMPLEX__ = (int)1L;
+
+    private static final int __STDC_IEC_559_COMPLEX__ = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __STDC_IEC_559_COMPLEX__ 1
-     * }
+     *}
      */
     public static int __STDC_IEC_559_COMPLEX__() {
         return __STDC_IEC_559_COMPLEX__;
     }
-    private static final int __GNU_LIBRARY__ = (int)6L;
+
+    private static final int __GNU_LIBRARY__ = (int) 6L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GNU_LIBRARY__ 6
-     * }
+     *}
      */
     public static int __GNU_LIBRARY__() {
         return __GNU_LIBRARY__;
     }
-    private static final int __GLIBC__ = (int)2L;
+
+    private static final int __GLIBC__ = (int) 2L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC__ 2
-     * }
+     *}
      */
     public static int __GLIBC__() {
         return __GLIBC__;
     }
-    private static final int __GLIBC_MINOR__ = (int)41L;
+
+    private static final int __GLIBC_MINOR__ = (int) 41L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_MINOR__ 41
-     * }
+     *}
      */
     public static int __GLIBC_MINOR__() {
         return __GLIBC_MINOR__;
     }
-    private static final int _SYS_CDEFS_H = (int)1L;
+
+    private static final int _SYS_CDEFS_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _SYS_CDEFS_H 1
-     * }
+     *}
      */
     public static int _SYS_CDEFS_H() {
         return _SYS_CDEFS_H;
     }
-    private static final int __glibc_c99_flexarr_available = (int)1L;
+
+    private static final int __glibc_c99_flexarr_available = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __glibc_c99_flexarr_available 1
-     * }
+     *}
      */
     public static int __glibc_c99_flexarr_available() {
         return __glibc_c99_flexarr_available;
     }
-    private static final int __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI = (int)0L;
+
+    private static final int __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI 0
-     * }
+     *}
      */
     public static int __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI() {
         return __LDOUBLE_REDIRECTS_TO_FLOAT128_ABI;
     }
-    private static final int __HAVE_GENERIC_SELECTION = (int)1L;
+
+    private static final int __HAVE_GENERIC_SELECTION = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __HAVE_GENERIC_SELECTION 1
-     * }
+     *}
      */
     public static int __HAVE_GENERIC_SELECTION() {
         return __HAVE_GENERIC_SELECTION;
     }
-    private static final int __GLIBC_USE_LIB_EXT2 = (int)0L;
+
+    private static final int __GLIBC_USE_LIB_EXT2 = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_LIB_EXT2 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_LIB_EXT2() {
         return __GLIBC_USE_LIB_EXT2;
     }
-    private static final int __GLIBC_USE_IEC_60559_BFP_EXT = (int)0L;
+
+    private static final int __GLIBC_USE_IEC_60559_BFP_EXT = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_IEC_60559_BFP_EXT 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_IEC_60559_BFP_EXT() {
         return __GLIBC_USE_IEC_60559_BFP_EXT;
     }
-    private static final int __GLIBC_USE_IEC_60559_BFP_EXT_C23 = (int)0L;
+
+    private static final int __GLIBC_USE_IEC_60559_BFP_EXT_C23 = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_IEC_60559_BFP_EXT_C23 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_IEC_60559_BFP_EXT_C23() {
         return __GLIBC_USE_IEC_60559_BFP_EXT_C23;
     }
-    private static final int __GLIBC_USE_IEC_60559_EXT = (int)0L;
+
+    private static final int __GLIBC_USE_IEC_60559_EXT = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_IEC_60559_EXT 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_IEC_60559_EXT() {
         return __GLIBC_USE_IEC_60559_EXT;
     }
-    private static final int __GLIBC_USE_IEC_60559_FUNCS_EXT = (int)0L;
+
+    private static final int __GLIBC_USE_IEC_60559_FUNCS_EXT = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_IEC_60559_FUNCS_EXT 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_IEC_60559_FUNCS_EXT() {
         return __GLIBC_USE_IEC_60559_FUNCS_EXT;
     }
-    private static final int __GLIBC_USE_IEC_60559_FUNCS_EXT_C23 = (int)0L;
+
+    private static final int __GLIBC_USE_IEC_60559_FUNCS_EXT_C23 = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_IEC_60559_FUNCS_EXT_C23 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_IEC_60559_FUNCS_EXT_C23() {
         return __GLIBC_USE_IEC_60559_FUNCS_EXT_C23;
     }
-    private static final int __GLIBC_USE_IEC_60559_TYPES_EXT = (int)0L;
+
+    private static final int __GLIBC_USE_IEC_60559_TYPES_EXT = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __GLIBC_USE_IEC_60559_TYPES_EXT 0
-     * }
+     *}
      */
     public static int __GLIBC_USE_IEC_60559_TYPES_EXT() {
         return __GLIBC_USE_IEC_60559_TYPES_EXT;
     }
-    private static final int _BITS_TYPES_H = (int)1L;
+
+    private static final int _BITS_TYPES_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _BITS_TYPES_H 1
-     * }
+     *}
      */
     public static int _BITS_TYPES_H() {
         return _BITS_TYPES_H;
     }
-    private static final int _BITS_TYPESIZES_H = (int)1L;
+
+    private static final int _BITS_TYPESIZES_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _BITS_TYPESIZES_H 1
-     * }
+     *}
      */
     public static int _BITS_TYPESIZES_H() {
         return _BITS_TYPESIZES_H;
     }
-    private static final int __OFF_T_MATCHES_OFF64_T = (int)1L;
+
+    private static final int __OFF_T_MATCHES_OFF64_T = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __OFF_T_MATCHES_OFF64_T 1
-     * }
+     *}
      */
     public static int __OFF_T_MATCHES_OFF64_T() {
         return __OFF_T_MATCHES_OFF64_T;
     }
-    private static final int __INO_T_MATCHES_INO64_T = (int)1L;
+
+    private static final int __INO_T_MATCHES_INO64_T = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __INO_T_MATCHES_INO64_T 1
-     * }
+     *}
      */
     public static int __INO_T_MATCHES_INO64_T() {
         return __INO_T_MATCHES_INO64_T;
     }
-    private static final int __RLIM_T_MATCHES_RLIM64_T = (int)1L;
+
+    private static final int __RLIM_T_MATCHES_RLIM64_T = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __RLIM_T_MATCHES_RLIM64_T 1
-     * }
+     *}
      */
     public static int __RLIM_T_MATCHES_RLIM64_T() {
         return __RLIM_T_MATCHES_RLIM64_T;
     }
-    private static final int __STATFS_MATCHES_STATFS64 = (int)1L;
+
+    private static final int __STATFS_MATCHES_STATFS64 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __STATFS_MATCHES_STATFS64 1
-     * }
+     *}
      */
     public static int __STATFS_MATCHES_STATFS64() {
         return __STATFS_MATCHES_STATFS64;
     }
-    private static final int __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64 = (int)1L;
+
+    private static final int __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64 = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64 1
-     * }
+     *}
      */
     public static int __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64() {
         return __KERNEL_OLD_TIMEVAL_MATCHES_TIMEVAL64;
     }
-    private static final int __FD_SETSIZE = (int)1024L;
+
+    private static final int __FD_SETSIZE = (int) 1024L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __FD_SETSIZE 1024
-     * }
+     *}
      */
     public static int __FD_SETSIZE() {
         return __FD_SETSIZE;
     }
-    private static final int _BITS_TIME64_H = (int)1L;
+
+    private static final int _BITS_TIME64_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _BITS_TIME64_H 1
-     * }
+     *}
      */
     public static int _BITS_TIME64_H() {
         return _BITS_TIME64_H;
     }
-    private static final int _BITS_WCHAR_H = (int)1L;
+
+    private static final int _BITS_WCHAR_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _BITS_WCHAR_H 1
-     * }
+     *}
      */
     public static int _BITS_WCHAR_H() {
         return _BITS_WCHAR_H;
     }
-    private static final int _BITS_STDINT_INTN_H = (int)1L;
+
+    private static final int _BITS_STDINT_INTN_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _BITS_STDINT_INTN_H 1
-     * }
+     *}
      */
     public static int _BITS_STDINT_INTN_H() {
         return _BITS_STDINT_INTN_H;
     }
-    private static final int _BITS_STDINT_UINTN_H = (int)1L;
+
+    private static final int _BITS_STDINT_UINTN_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _BITS_STDINT_UINTN_H 1
-     * }
+     *}
      */
     public static int _BITS_STDINT_UINTN_H() {
         return _BITS_STDINT_UINTN_H;
     }
-    private static final int _BITS_STDINT_LEAST_H = (int)1L;
+
+    private static final int _BITS_STDINT_LEAST_H = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _BITS_STDINT_LEAST_H 1
-     * }
+     *}
      */
     public static int _BITS_STDINT_LEAST_H() {
         return _BITS_STDINT_LEAST_H;
     }
-    private static final int CAPPROPID_EXPOSURE = (int)1L;
+
+    private static final int CAPPROPID_EXPOSURE = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_EXPOSURE 1
-     * }
+     *}
      */
     public static int CAPPROPID_EXPOSURE() {
         return CAPPROPID_EXPOSURE;
     }
-    private static final int CAPPROPID_FOCUS = (int)2L;
+
+    private static final int CAPPROPID_FOCUS = (int) 2L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_FOCUS 2
-     * }
+     *}
      */
     public static int CAPPROPID_FOCUS() {
         return CAPPROPID_FOCUS;
     }
-    private static final int CAPPROPID_ZOOM = (int)3L;
+
+    private static final int CAPPROPID_ZOOM = (int) 3L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_ZOOM 3
-     * }
+     *}
      */
     public static int CAPPROPID_ZOOM() {
         return CAPPROPID_ZOOM;
     }
-    private static final int CAPPROPID_WHITEBALANCE = (int)4L;
+
+    private static final int CAPPROPID_WHITEBALANCE = (int) 4L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_WHITEBALANCE 4
-     * }
+     *}
      */
     public static int CAPPROPID_WHITEBALANCE() {
         return CAPPROPID_WHITEBALANCE;
     }
-    private static final int CAPPROPID_GAIN = (int)5L;
+
+    private static final int CAPPROPID_GAIN = (int) 5L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_GAIN 5
-     * }
+     *}
      */
     public static int CAPPROPID_GAIN() {
         return CAPPROPID_GAIN;
     }
-    private static final int CAPPROPID_BRIGHTNESS = (int)6L;
+
+    private static final int CAPPROPID_BRIGHTNESS = (int) 6L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_BRIGHTNESS 6
-     * }
+     *}
      */
     public static int CAPPROPID_BRIGHTNESS() {
         return CAPPROPID_BRIGHTNESS;
     }
-    private static final int CAPPROPID_CONTRAST = (int)7L;
+
+    private static final int CAPPROPID_CONTRAST = (int) 7L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_CONTRAST 7
-     * }
+     *}
      */
     public static int CAPPROPID_CONTRAST() {
         return CAPPROPID_CONTRAST;
     }
-    private static final int CAPPROPID_SATURATION = (int)8L;
+
+    private static final int CAPPROPID_SATURATION = (int) 8L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_SATURATION 8
-     * }
+     *}
      */
     public static int CAPPROPID_SATURATION() {
         return CAPPROPID_SATURATION;
     }
-    private static final int CAPPROPID_GAMMA = (int)9L;
+
+    private static final int CAPPROPID_GAMMA = (int) 9L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_GAMMA 9
-     * }
+     *}
      */
     public static int CAPPROPID_GAMMA() {
         return CAPPROPID_GAMMA;
     }
-    private static final int CAPPROPID_HUE = (int)10L;
+
+    private static final int CAPPROPID_HUE = (int) 10L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_HUE 10
-     * }
+     *}
      */
     public static int CAPPROPID_HUE() {
         return CAPPROPID_HUE;
     }
-    private static final int CAPPROPID_SHARPNESS = (int)11L;
+
+    private static final int CAPPROPID_SHARPNESS = (int) 11L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_SHARPNESS 11
-     * }
+     *}
      */
     public static int CAPPROPID_SHARPNESS() {
         return CAPPROPID_SHARPNESS;
     }
-    private static final int CAPPROPID_BACKLIGHTCOMP = (int)12L;
+
+    private static final int CAPPROPID_BACKLIGHTCOMP = (int) 12L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_BACKLIGHTCOMP 12
-     * }
+     *}
      */
     public static int CAPPROPID_BACKLIGHTCOMP() {
         return CAPPROPID_BACKLIGHTCOMP;
     }
-    private static final int CAPPROPID_POWERLINEFREQ = (int)13L;
+
+    private static final int CAPPROPID_POWERLINEFREQ = (int) 13L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_POWERLINEFREQ 13
-     * }
+     *}
      */
     public static int CAPPROPID_POWERLINEFREQ() {
         return CAPPROPID_POWERLINEFREQ;
     }
-    private static final int CAPPROPID_LAST = (int)14L;
+
+    private static final int CAPPROPID_LAST = (int) 14L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPPROPID_LAST 14
-     * }
+     *}
      */
     public static int CAPPROPID_LAST() {
         return CAPPROPID_LAST;
     }
-    private static final int CAPRESULT_OK = (int)0L;
+
+    private static final int CAPRESULT_OK = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPRESULT_OK 0
-     * }
+     *}
      */
     public static int CAPRESULT_OK() {
         return CAPRESULT_OK;
     }
-    private static final int CAPRESULT_ERR = (int)1L;
+
+    private static final int CAPRESULT_ERR = (int) 1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPRESULT_ERR 1
-     * }
+     *}
      */
     public static int CAPRESULT_ERR() {
         return CAPRESULT_ERR;
     }
-    private static final int CAPRESULT_DEVICENOTFOUND = (int)2L;
+
+    private static final int CAPRESULT_DEVICENOTFOUND = (int) 2L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPRESULT_DEVICENOTFOUND 2
-     * }
+     *}
      */
     public static int CAPRESULT_DEVICENOTFOUND() {
         return CAPRESULT_DEVICENOTFOUND;
     }
-    private static final int CAPRESULT_FORMATNOTSUPPORTED = (int)3L;
+
+    private static final int CAPRESULT_FORMATNOTSUPPORTED = (int) 3L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPRESULT_FORMATNOTSUPPORTED 3
-     * }
+     *}
      */
     public static int CAPRESULT_FORMATNOTSUPPORTED() {
         return CAPRESULT_FORMATNOTSUPPORTED;
     }
-    private static final int CAPRESULT_PROPERTYNOTSUPPORTED = (int)4L;
+
+    private static final int CAPRESULT_PROPERTYNOTSUPPORTED = (int) 4L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define CAPRESULT_PROPERTYNOTSUPPORTED 4
-     * }
+     *}
      */
     public static int CAPRESULT_PROPERTYNOTSUPPORTED() {
         return CAPRESULT_PROPERTYNOTSUPPORTED;
     }
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned char __u_char
-     * }
+     *}
      */
     public static final OfByte __u_char = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned short __u_short
-     * }
+     *}
      */
     public static final OfShort __u_short = openpnp_capture.C_SHORT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned int __u_int
-     * }
+     *}
      */
     public static final OfInt __u_int = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __u_long
-     * }
+     *}
      */
 //    public static final OfLong __u_long = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef signed char __int8_t
-     * }
+     *}
      */
     public static final OfByte __int8_t = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned char __uint8_t
-     * }
+     *}
      */
     public static final OfByte __uint8_t = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef short __int16_t
-     * }
+     *}
      */
     public static final OfShort __int16_t = openpnp_capture.C_SHORT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned short __uint16_t
-     * }
+     *}
      */
     public static final OfShort __uint16_t = openpnp_capture.C_SHORT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef int __int32_t
-     * }
+     *}
      */
     public static final OfInt __int32_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned int __uint32_t
-     * }
+     *}
      */
     public static final OfInt __uint32_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __int64_t
-     * }
+     *}
      */
 //    public static final OfLong __int64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __uint64_t
-     * }
+     *}
      */
 //    public static final OfLong __uint64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int8_t __int_least8_t
-     * }
+     *}
      */
     public static final OfByte __int_least8_t = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint8_t __uint_least8_t
-     * }
+     *}
      */
     public static final OfByte __uint_least8_t = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int16_t __int_least16_t
-     * }
+     *}
      */
     public static final OfShort __int_least16_t = openpnp_capture.C_SHORT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint16_t __uint_least16_t
-     * }
+     *}
      */
     public static final OfShort __uint_least16_t = openpnp_capture.C_SHORT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int32_t __int_least32_t
-     * }
+     *}
      */
     public static final OfInt __int_least32_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint32_t __uint_least32_t
-     * }
+     *}
      */
     public static final OfInt __uint_least32_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int64_t __int_least64_t
-     * }
+     *}
      */
 //    public static final OfLong __int_least64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint64_t __uint_least64_t
-     * }
+     *}
      */
 //    public static final OfLong __uint_least64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __quad_t
-     * }
+     *}
      */
 //    public static final OfLong __quad_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __u_quad_t
-     * }
+     *}
      */
 //    public static final OfLong __u_quad_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __intmax_t
-     * }
+     *}
      */
 //    public static final OfLong __intmax_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __uintmax_t
-     * }
+     *}
      */
 //    public static final OfLong __uintmax_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __dev_t
-     * }
+     *}
      */
 //    public static final OfLong __dev_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned int __uid_t
-     * }
+     *}
      */
     public static final OfInt __uid_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned int __gid_t
-     * }
+     *}
      */
     public static final OfInt __gid_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __ino_t
-     * }
+     *}
      */
 //    public static final OfLong __ino_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __ino64_t
-     * }
+     *}
      */
 //    public static final OfLong __ino64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned int __mode_t
-     * }
+     *}
      */
     public static final OfInt __mode_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __nlink_t
-     * }
+     *}
      */
 //    public static final OfLong __nlink_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __off_t
-     * }
+     *}
      */
 //    public static final OfLong __off_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __off64_t
-     * }
+     *}
      */
 //    public static final OfLong __off64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef int __pid_t
-     * }
+     *}
      */
     public static final OfInt __pid_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __clock_t
-     * }
+     *}
      */
 //    public static final OfLong __clock_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __rlim_t
-     * }
+     *}
      */
 //    public static final OfLong __rlim_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __rlim64_t
-     * }
+     *}
      */
 //    public static final OfLong __rlim64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned int __id_t
-     * }
+     *}
      */
     public static final OfInt __id_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __time_t
-     * }
+     *}
      */
 //    public static final OfLong __time_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned int __useconds_t
-     * }
+     *}
      */
     public static final OfInt __useconds_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __suseconds_t
-     * }
+     *}
      */
 //    public static final OfLong __suseconds_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __suseconds64_t
-     * }
+     *}
      */
 //    public static final OfLong __suseconds64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef int __daddr_t
-     * }
+     *}
      */
     public static final OfInt __daddr_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef int __key_t
-     * }
+     *}
      */
     public static final OfInt __key_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef int __clockid_t
-     * }
+     *}
      */
     public static final OfInt __clockid_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef void *__timer_t
-     * }
+     *}
      */
     public static final AddressLayout __timer_t = openpnp_capture.C_POINTER;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __blksize_t
-     * }
+     *}
      */
 //    public static final OfLong __blksize_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __blkcnt_t
-     * }
+     *}
      */
 //    public static final OfLong __blkcnt_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __blkcnt64_t
-     * }
+     *}
      */
 //    public static final OfLong __blkcnt64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __fsblkcnt_t
-     * }
+     *}
      */
 //    public static final OfLong __fsblkcnt_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __fsblkcnt64_t
-     * }
+     *}
      */
 //    public static final OfLong __fsblkcnt64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __fsfilcnt_t
-     * }
+     *}
      */
 //    public static final OfLong __fsfilcnt_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __fsfilcnt64_t
-     * }
+     *}
      */
 //    public static final OfLong __fsfilcnt64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __fsword_t
-     * }
+     *}
      */
 //    public static final OfLong __fsword_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __ssize_t
-     * }
+     *}
      */
 //    public static final OfLong __ssize_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __syscall_slong_t
-     * }
+     *}
      */
 //    public static final OfLong __syscall_slong_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long __syscall_ulong_t
-     * }
+     *}
      */
 //    public static final OfLong __syscall_ulong_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __off64_t __loff_t
-     * }
+     *}
      */
 //    public static final OfLong __loff_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef char *__caddr_t
-     * }
+     *}
      */
     public static final AddressLayout __caddr_t = openpnp_capture.C_POINTER;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long __intptr_t
-     * }
+     *}
      */
 //    public static final OfLong __intptr_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned int __socklen_t
-     * }
+     *}
      */
     public static final OfInt __socklen_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef int __sig_atomic_t
-     * }
+     *}
      */
     public static final OfInt __sig_atomic_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int8_t int8_t
-     * }
+     *}
      */
     public static final OfByte int8_t = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int16_t int16_t
-     * }
+     *}
      */
     public static final OfShort int16_t = openpnp_capture.C_SHORT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int32_t int32_t
-     * }
+     *}
      */
     public static final OfInt int32_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int64_t int64_t
-     * }
+     *}
      */
 //    public static final OfLong int64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint8_t uint8_t
-     * }
+     *}
      */
     public static final OfByte uint8_t = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint16_t uint16_t
-     * }
+     *}
      */
     public static final OfShort uint16_t = openpnp_capture.C_SHORT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint32_t uint32_t
-     * }
+     *}
      */
     public static final OfInt uint32_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint64_t uint64_t
-     * }
+     *}
      */
 //    public static final OfLong uint64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int_least8_t int_least8_t
-     * }
+     *}
      */
     public static final OfByte int_least8_t = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int_least16_t int_least16_t
-     * }
+     *}
      */
     public static final OfShort int_least16_t = openpnp_capture.C_SHORT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int_least32_t int_least32_t
-     * }
+     *}
      */
     public static final OfInt int_least32_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __int_least64_t int_least64_t
-     * }
+     *}
      */
 //    public static final OfLong int_least64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint_least8_t uint_least8_t
-     * }
+     *}
      */
     public static final OfByte uint_least8_t = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint_least16_t uint_least16_t
-     * }
+     *}
      */
     public static final OfShort uint_least16_t = openpnp_capture.C_SHORT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint_least32_t uint_least32_t
-     * }
+     *}
      */
     public static final OfInt uint_least32_t = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uint_least64_t uint_least64_t
-     * }
+     *}
      */
 //    public static final OfLong uint_least64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef signed char int_fast8_t
-     * }
+     *}
      */
     public static final OfByte int_fast8_t = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long int_fast16_t
-     * }
+     *}
      */
 //    public static final OfLong int_fast16_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long int_fast32_t
-     * }
+     *}
      */
 //    public static final OfLong int_fast32_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long int_fast64_t
-     * }
+     *}
      */
 //    public static final OfLong int_fast64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned char uint_fast8_t
-     * }
+     *}
      */
     public static final OfByte uint_fast8_t = openpnp_capture.C_CHAR;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long uint_fast16_t
-     * }
+     *}
      */
 //    public static final OfLong uint_fast16_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long uint_fast32_t
-     * }
+     *}
      */
 //    public static final OfLong uint_fast32_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long uint_fast64_t
-     * }
+     *}
      */
 //    public static final OfLong uint_fast64_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef long intptr_t
-     * }
+     *}
      */
 //    public static final OfLong intptr_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef unsigned long uintptr_t
-     * }
+     *}
      */
 //    public static final OfLong uintptr_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __intmax_t intmax_t
-     * }
+     *}
      */
 //    public static final OfLong intmax_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef __uintmax_t uintmax_t
-     * }
+     *}
      */
 //    public static final OfLong uintmax_t = openpnp_capture.C_LONG;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef void *CapContext
-     * }
+     *}
      */
     public static final AddressLayout CapContext = openpnp_capture.C_POINTER;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef int32_t CapStream
-     * }
+     *}
      */
     public static final OfInt CapStream = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef uint32_t CapResult
-     * }
+     *}
      */
     public static final OfInt CapResult = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef uint32_t CapDeviceID
-     * }
+     *}
      */
     public static final OfInt CapDeviceID = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef uint32_t CapFormatID
-     * }
+     *}
      */
     public static final OfInt CapFormatID = openpnp_capture.C_INT;
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * typedef uint32_t CapPropertyID
-     * }
+     *}
      */
     public static final OfInt CapPropertyID = openpnp_capture.C_INT;
 
     private static class Cap_createContext {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_POINTER    );
+                openpnp_capture.C_POINTER);
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_createContext");
 
@@ -1307,9 +1456,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapContext Cap_createContext()
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_createContext$descriptor() {
         return Cap_createContext.DESC;
@@ -1317,9 +1466,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapContext Cap_createContext()
-     * }
+     *}
      */
     public static MethodHandle Cap_createContext$handle() {
         return Cap_createContext.HANDLE;
@@ -1327,18 +1476,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapContext Cap_createContext()
-     * }
+     *}
      */
     public static MemorySegment Cap_createContext$address() {
         return Cap_createContext.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapContext Cap_createContext()
-     * }
+     *}
      */
     public static MemorySegment Cap_createContext() {
         var mh$ = Cap_createContext.HANDLE;
@@ -1346,18 +1495,18 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_createContext");
             }
-            return (MemorySegment)mh$.invokeExact();
+            return (MemorySegment) mh$.invokeExact();
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_releaseContext {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_releaseContext");
@@ -1367,9 +1516,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_releaseContext(CapContext ctx)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_releaseContext$descriptor() {
         return Cap_releaseContext.DESC;
@@ -1377,9 +1526,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_releaseContext(CapContext ctx)
-     * }
+     *}
      */
     public static MethodHandle Cap_releaseContext$handle() {
         return Cap_releaseContext.HANDLE;
@@ -1387,18 +1536,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_releaseContext(CapContext ctx)
-     * }
+     *}
      */
     public static MemorySegment Cap_releaseContext$address() {
         return Cap_releaseContext.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_releaseContext(CapContext ctx)
-     * }
+     *}
      */
     public static int Cap_releaseContext(MemorySegment ctx) {
         var mh$ = Cap_releaseContext.HANDLE;
@@ -1406,18 +1555,18 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_releaseContext", ctx);
             }
-            return (int)mh$.invokeExact(ctx);
+            return (int) mh$.invokeExact(ctx);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_getDeviceCount {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getDeviceCount");
@@ -1427,9 +1576,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_getDeviceCount(CapContext ctx)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_getDeviceCount$descriptor() {
         return Cap_getDeviceCount.DESC;
@@ -1437,9 +1586,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_getDeviceCount(CapContext ctx)
-     * }
+     *}
      */
     public static MethodHandle Cap_getDeviceCount$handle() {
         return Cap_getDeviceCount.HANDLE;
@@ -1447,18 +1596,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_getDeviceCount(CapContext ctx)
-     * }
+     *}
      */
     public static MemorySegment Cap_getDeviceCount$address() {
         return Cap_getDeviceCount.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_getDeviceCount(CapContext ctx)
-     * }
+     *}
      */
     public static int Cap_getDeviceCount(MemorySegment ctx) {
         var mh$ = Cap_getDeviceCount.HANDLE;
@@ -1466,19 +1615,19 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_getDeviceCount", ctx);
             }
-            return (int)mh$.invokeExact(ctx);
+            return (int) mh$.invokeExact(ctx);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_getDeviceName {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getDeviceName");
@@ -1488,9 +1637,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * const char *Cap_getDeviceName(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_getDeviceName$descriptor() {
         return Cap_getDeviceName.DESC;
@@ -1498,9 +1647,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * const char *Cap_getDeviceName(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static MethodHandle Cap_getDeviceName$handle() {
         return Cap_getDeviceName.HANDLE;
@@ -1508,18 +1657,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * const char *Cap_getDeviceName(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static MemorySegment Cap_getDeviceName$address() {
         return Cap_getDeviceName.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * const char *Cap_getDeviceName(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static MemorySegment Cap_getDeviceName(MemorySegment ctx, int index) {
         var mh$ = Cap_getDeviceName.HANDLE;
@@ -1527,19 +1676,19 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_getDeviceName", ctx, index);
             }
-            return (MemorySegment)mh$.invokeExact(ctx, index);
+            return (MemorySegment) mh$.invokeExact(ctx, index);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_getDeviceUniqueID {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getDeviceUniqueID");
@@ -1549,9 +1698,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * const char *Cap_getDeviceUniqueID(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_getDeviceUniqueID$descriptor() {
         return Cap_getDeviceUniqueID.DESC;
@@ -1559,9 +1708,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * const char *Cap_getDeviceUniqueID(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static MethodHandle Cap_getDeviceUniqueID$handle() {
         return Cap_getDeviceUniqueID.HANDLE;
@@ -1569,18 +1718,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * const char *Cap_getDeviceUniqueID(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static MemorySegment Cap_getDeviceUniqueID$address() {
         return Cap_getDeviceUniqueID.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * const char *Cap_getDeviceUniqueID(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static MemorySegment Cap_getDeviceUniqueID(MemorySegment ctx, int index) {
         var mh$ = Cap_getDeviceUniqueID.HANDLE;
@@ -1588,19 +1737,19 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_getDeviceUniqueID", ctx, index);
             }
-            return (MemorySegment)mh$.invokeExact(ctx, index);
+            return (MemorySegment) mh$.invokeExact(ctx, index);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_getNumFormats {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getNumFormats");
@@ -1610,9 +1759,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * int32_t Cap_getNumFormats(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_getNumFormats$descriptor() {
         return Cap_getNumFormats.DESC;
@@ -1620,9 +1769,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * int32_t Cap_getNumFormats(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static MethodHandle Cap_getNumFormats$handle() {
         return Cap_getNumFormats.HANDLE;
@@ -1630,18 +1779,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * int32_t Cap_getNumFormats(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static MemorySegment Cap_getNumFormats$address() {
         return Cap_getNumFormats.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * int32_t Cap_getNumFormats(CapContext ctx, CapDeviceID index)
-     * }
+     *}
      */
     public static int Cap_getNumFormats(MemorySegment ctx, int index) {
         var mh$ = Cap_getNumFormats.HANDLE;
@@ -1649,21 +1798,21 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_getNumFormats", ctx, index);
             }
-            return (int)mh$.invokeExact(ctx, index);
+            return (int) mh$.invokeExact(ctx, index);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_getFormatInfo {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getFormatInfo");
@@ -1673,9 +1822,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getFormatInfo(CapContext ctx, CapDeviceID index, CapFormatID id, CapFormatInfo *info)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_getFormatInfo$descriptor() {
         return Cap_getFormatInfo.DESC;
@@ -1683,9 +1832,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getFormatInfo(CapContext ctx, CapDeviceID index, CapFormatID id, CapFormatInfo *info)
-     * }
+     *}
      */
     public static MethodHandle Cap_getFormatInfo$handle() {
         return Cap_getFormatInfo.HANDLE;
@@ -1693,18 +1842,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getFormatInfo(CapContext ctx, CapDeviceID index, CapFormatID id, CapFormatInfo *info)
-     * }
+     *}
      */
     public static MemorySegment Cap_getFormatInfo$address() {
         return Cap_getFormatInfo.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getFormatInfo(CapContext ctx, CapDeviceID index, CapFormatID id, CapFormatInfo *info)
-     * }
+     *}
      */
     public static int Cap_getFormatInfo(MemorySegment ctx, int index, int id, MemorySegment info) {
         var mh$ = Cap_getFormatInfo.HANDLE;
@@ -1712,20 +1861,20 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_getFormatInfo", ctx, index, id, info);
             }
-            return (int)mh$.invokeExact(ctx, index, id, info);
+            return (int) mh$.invokeExact(ctx, index, id, info);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_openStream {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_INT
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_openStream");
@@ -1735,9 +1884,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapStream Cap_openStream(CapContext ctx, CapDeviceID index, CapFormatID formatID)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_openStream$descriptor() {
         return Cap_openStream.DESC;
@@ -1745,9 +1894,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapStream Cap_openStream(CapContext ctx, CapDeviceID index, CapFormatID formatID)
-     * }
+     *}
      */
     public static MethodHandle Cap_openStream$handle() {
         return Cap_openStream.HANDLE;
@@ -1755,18 +1904,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapStream Cap_openStream(CapContext ctx, CapDeviceID index, CapFormatID formatID)
-     * }
+     *}
      */
     public static MemorySegment Cap_openStream$address() {
         return Cap_openStream.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapStream Cap_openStream(CapContext ctx, CapDeviceID index, CapFormatID formatID)
-     * }
+     *}
      */
     public static int Cap_openStream(MemorySegment ctx, int index, int formatID) {
         var mh$ = Cap_openStream.HANDLE;
@@ -1774,19 +1923,19 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_openStream", ctx, index, formatID);
             }
-            return (int)mh$.invokeExact(ctx, index, formatID);
+            return (int) mh$.invokeExact(ctx, index, formatID);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_closeStream {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_closeStream");
@@ -1796,9 +1945,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_closeStream(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_closeStream$descriptor() {
         return Cap_closeStream.DESC;
@@ -1806,9 +1955,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_closeStream(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static MethodHandle Cap_closeStream$handle() {
         return Cap_closeStream.HANDLE;
@@ -1816,18 +1965,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_closeStream(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static MemorySegment Cap_closeStream$address() {
         return Cap_closeStream.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_closeStream(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static int Cap_closeStream(MemorySegment ctx, int stream) {
         var mh$ = Cap_closeStream.HANDLE;
@@ -1835,19 +1984,19 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_closeStream", ctx, stream);
             }
-            return (int)mh$.invokeExact(ctx, stream);
+            return (int) mh$.invokeExact(ctx, stream);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_isOpenStream {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_isOpenStream");
@@ -1857,9 +2006,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_isOpenStream(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_isOpenStream$descriptor() {
         return Cap_isOpenStream.DESC;
@@ -1867,9 +2016,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_isOpenStream(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static MethodHandle Cap_isOpenStream$handle() {
         return Cap_isOpenStream.HANDLE;
@@ -1877,18 +2026,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_isOpenStream(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static MemorySegment Cap_isOpenStream$address() {
         return Cap_isOpenStream.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_isOpenStream(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static int Cap_isOpenStream(MemorySegment ctx, int stream) {
         var mh$ = Cap_isOpenStream.HANDLE;
@@ -1896,21 +2045,21 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_isOpenStream", ctx, stream);
             }
-            return (int)mh$.invokeExact(ctx, stream);
+            return (int) mh$.invokeExact(ctx, stream);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_captureFrame {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_captureFrame");
@@ -1920,9 +2069,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_captureFrame(CapContext ctx, CapStream stream, void *RGBbufferPtr, uint32_t RGBbufferBytes)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_captureFrame$descriptor() {
         return Cap_captureFrame.DESC;
@@ -1930,9 +2079,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_captureFrame(CapContext ctx, CapStream stream, void *RGBbufferPtr, uint32_t RGBbufferBytes)
-     * }
+     *}
      */
     public static MethodHandle Cap_captureFrame$handle() {
         return Cap_captureFrame.HANDLE;
@@ -1940,18 +2089,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_captureFrame(CapContext ctx, CapStream stream, void *RGBbufferPtr, uint32_t RGBbufferBytes)
-     * }
+     *}
      */
     public static MemorySegment Cap_captureFrame$address() {
         return Cap_captureFrame.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_captureFrame(CapContext ctx, CapStream stream, void *RGBbufferPtr, uint32_t RGBbufferBytes)
-     * }
+     *}
      */
     public static int Cap_captureFrame(MemorySegment ctx, int stream, MemorySegment RGBbufferPtr, int RGBbufferBytes) {
         var mh$ = Cap_captureFrame.HANDLE;
@@ -1959,19 +2108,19 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_captureFrame", ctx, stream, RGBbufferPtr, RGBbufferBytes);
             }
-            return (int)mh$.invokeExact(ctx, stream, RGBbufferPtr, RGBbufferBytes);
+            return (int) mh$.invokeExact(ctx, stream, RGBbufferPtr, RGBbufferBytes);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_hasNewFrame {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_hasNewFrame");
@@ -1981,9 +2130,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_hasNewFrame(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_hasNewFrame$descriptor() {
         return Cap_hasNewFrame.DESC;
@@ -1991,9 +2140,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_hasNewFrame(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static MethodHandle Cap_hasNewFrame$handle() {
         return Cap_hasNewFrame.HANDLE;
@@ -2001,18 +2150,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_hasNewFrame(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static MemorySegment Cap_hasNewFrame$address() {
         return Cap_hasNewFrame.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_hasNewFrame(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static int Cap_hasNewFrame(MemorySegment ctx, int stream) {
         var mh$ = Cap_hasNewFrame.HANDLE;
@@ -2020,19 +2169,19 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_hasNewFrame", ctx, stream);
             }
-            return (int)mh$.invokeExact(ctx, stream);
+            return (int) mh$.invokeExact(ctx, stream);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_getStreamFrameCount {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getStreamFrameCount");
@@ -2042,9 +2191,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_getStreamFrameCount(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_getStreamFrameCount$descriptor() {
         return Cap_getStreamFrameCount.DESC;
@@ -2052,9 +2201,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_getStreamFrameCount(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static MethodHandle Cap_getStreamFrameCount$handle() {
         return Cap_getStreamFrameCount.HANDLE;
@@ -2062,18 +2211,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_getStreamFrameCount(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static MemorySegment Cap_getStreamFrameCount$address() {
         return Cap_getStreamFrameCount.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t Cap_getStreamFrameCount(CapContext ctx, CapStream stream)
-     * }
+     *}
      */
     public static int Cap_getStreamFrameCount(MemorySegment ctx, int stream) {
         var mh$ = Cap_getStreamFrameCount.HANDLE;
@@ -2081,23 +2230,23 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_getStreamFrameCount", ctx, stream);
             }
-            return (int)mh$.invokeExact(ctx, stream);
+            return (int) mh$.invokeExact(ctx, stream);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_getPropertyLimits {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_POINTER
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_POINTER
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getPropertyLimits");
@@ -2107,9 +2256,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getPropertyLimits(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t *min, int32_t *max, int *dValue)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_getPropertyLimits$descriptor() {
         return Cap_getPropertyLimits.DESC;
@@ -2117,9 +2266,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getPropertyLimits(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t *min, int32_t *max, int *dValue)
-     * }
+     *}
      */
     public static MethodHandle Cap_getPropertyLimits$handle() {
         return Cap_getPropertyLimits.HANDLE;
@@ -2127,18 +2276,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getPropertyLimits(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t *min, int32_t *max, int *dValue)
-     * }
+     *}
      */
     public static MemorySegment Cap_getPropertyLimits$address() {
         return Cap_getPropertyLimits.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getPropertyLimits(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t *min, int32_t *max, int *dValue)
-     * }
+     *}
      */
     public static int Cap_getPropertyLimits(MemorySegment ctx, int stream, int propID, MemorySegment min, MemorySegment max, MemorySegment dValue) {
         var mh$ = Cap_getPropertyLimits.HANDLE;
@@ -2146,21 +2295,21 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_getPropertyLimits", ctx, stream, propID, min, max, dValue);
             }
-            return (int)mh$.invokeExact(ctx, stream, propID, min, max, dValue);
+            return (int) mh$.invokeExact(ctx, stream, propID, min, max, dValue);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_setProperty {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_INT
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_setProperty");
@@ -2170,9 +2319,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_setProperty(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t value)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_setProperty$descriptor() {
         return Cap_setProperty.DESC;
@@ -2180,9 +2329,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_setProperty(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t value)
-     * }
+     *}
      */
     public static MethodHandle Cap_setProperty$handle() {
         return Cap_setProperty.HANDLE;
@@ -2190,18 +2339,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_setProperty(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t value)
-     * }
+     *}
      */
     public static MemorySegment Cap_setProperty$address() {
         return Cap_setProperty.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_setProperty(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t value)
-     * }
+     *}
      */
     public static int Cap_setProperty(MemorySegment ctx, int stream, int propID, int value) {
         var mh$ = Cap_setProperty.HANDLE;
@@ -2209,21 +2358,21 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_setProperty", ctx, stream, propID, value);
             }
-            return (int)mh$.invokeExact(ctx, stream, propID, value);
+            return (int) mh$.invokeExact(ctx, stream, propID, value);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_setAutoProperty {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_INT
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_setAutoProperty");
@@ -2233,9 +2382,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_setAutoProperty(CapContext ctx, CapStream stream, CapPropertyID propID, uint32_t bOnOff)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_setAutoProperty$descriptor() {
         return Cap_setAutoProperty.DESC;
@@ -2243,9 +2392,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_setAutoProperty(CapContext ctx, CapStream stream, CapPropertyID propID, uint32_t bOnOff)
-     * }
+     *}
      */
     public static MethodHandle Cap_setAutoProperty$handle() {
         return Cap_setAutoProperty.HANDLE;
@@ -2253,18 +2402,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_setAutoProperty(CapContext ctx, CapStream stream, CapPropertyID propID, uint32_t bOnOff)
-     * }
+     *}
      */
     public static MemorySegment Cap_setAutoProperty$address() {
         return Cap_setAutoProperty.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_setAutoProperty(CapContext ctx, CapStream stream, CapPropertyID propID, uint32_t bOnOff)
-     * }
+     *}
      */
     public static int Cap_setAutoProperty(MemorySegment ctx, int stream, int propID, int bOnOff) {
         var mh$ = Cap_setAutoProperty.HANDLE;
@@ -2272,21 +2421,21 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_setAutoProperty", ctx, stream, propID, bOnOff);
             }
-            return (int)mh$.invokeExact(ctx, stream, propID, bOnOff);
+            return (int) mh$.invokeExact(ctx, stream, propID, bOnOff);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_getProperty {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getProperty");
@@ -2296,9 +2445,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getProperty(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t *outValue)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_getProperty$descriptor() {
         return Cap_getProperty.DESC;
@@ -2306,9 +2455,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getProperty(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t *outValue)
-     * }
+     *}
      */
     public static MethodHandle Cap_getProperty$handle() {
         return Cap_getProperty.HANDLE;
@@ -2316,18 +2465,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getProperty(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t *outValue)
-     * }
+     *}
      */
     public static MemorySegment Cap_getProperty$address() {
         return Cap_getProperty.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getProperty(CapContext ctx, CapStream stream, CapPropertyID propID, int32_t *outValue)
-     * }
+     *}
      */
     public static int Cap_getProperty(MemorySegment ctx, int stream, int propID, MemorySegment outValue) {
         var mh$ = Cap_getProperty.HANDLE;
@@ -2335,21 +2484,21 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_getProperty", ctx, stream, propID, outValue);
             }
-            return (int)mh$.invokeExact(ctx, stream, propID, outValue);
+            return (int) mh$.invokeExact(ctx, stream, propID, outValue);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_getAutoProperty {
         public static final FunctionDescriptor DESC = FunctionDescriptor.of(
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_INT,
-            openpnp_capture.C_POINTER
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_INT,
+                openpnp_capture.C_POINTER
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_getAutoProperty");
@@ -2359,9 +2508,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getAutoProperty(CapContext ctx, CapStream stream, CapPropertyID propID, uint32_t *outValue)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_getAutoProperty$descriptor() {
         return Cap_getAutoProperty.DESC;
@@ -2369,9 +2518,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getAutoProperty(CapContext ctx, CapStream stream, CapPropertyID propID, uint32_t *outValue)
-     * }
+     *}
      */
     public static MethodHandle Cap_getAutoProperty$handle() {
         return Cap_getAutoProperty.HANDLE;
@@ -2379,18 +2528,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getAutoProperty(CapContext ctx, CapStream stream, CapPropertyID propID, uint32_t *outValue)
-     * }
+     *}
      */
     public static MemorySegment Cap_getAutoProperty$address() {
         return Cap_getAutoProperty.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * CapResult Cap_getAutoProperty(CapContext ctx, CapStream stream, CapPropertyID propID, uint32_t *outValue)
-     * }
+     *}
      */
     public static int Cap_getAutoProperty(MemorySegment ctx, int stream, int propID, MemorySegment outValue) {
         var mh$ = Cap_getAutoProperty.HANDLE;
@@ -2398,17 +2547,17 @@ public class openpnp_capture extends openpnp_capture$shared {
             if (TRACE_DOWNCALLS) {
                 traceDowncall("Cap_getAutoProperty", ctx, stream, propID, outValue);
             }
-            return (int)mh$.invokeExact(ctx, stream, propID, outValue);
+            return (int) mh$.invokeExact(ctx, stream, propID, outValue);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_setLogLevel {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            openpnp_capture.C_INT
+                openpnp_capture.C_INT
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_setLogLevel");
@@ -2418,9 +2567,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * void Cap_setLogLevel(uint32_t level)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_setLogLevel$descriptor() {
         return Cap_setLogLevel.DESC;
@@ -2428,9 +2577,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * void Cap_setLogLevel(uint32_t level)
-     * }
+     *}
      */
     public static MethodHandle Cap_setLogLevel$handle() {
         return Cap_setLogLevel.HANDLE;
@@ -2438,18 +2587,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * void Cap_setLogLevel(uint32_t level)
-     * }
+     *}
      */
     public static MemorySegment Cap_setLogLevel$address() {
         return Cap_setLogLevel.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * void Cap_setLogLevel(uint32_t level)
-     * }
+     *}
      */
     public static void Cap_setLogLevel(int level) {
         var mh$ = Cap_setLogLevel.HANDLE;
@@ -2459,15 +2608,15 @@ public class openpnp_capture extends openpnp_capture$shared {
             }
             mh$.invokeExact(level);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
     private static class Cap_installCustomLogFunction {
         public static final FunctionDescriptor DESC = FunctionDescriptor.ofVoid(
-            openpnp_capture.C_POINTER
+                openpnp_capture.C_POINTER
         );
 
         public static final MemorySegment ADDR = SYMBOL_LOOKUP.findOrThrow("Cap_installCustomLogFunction");
@@ -2477,9 +2626,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Function descriptor for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * void Cap_installCustomLogFunction(CapCustomLogFunc logFunc)
-     * }
+     *}
      */
     public static FunctionDescriptor Cap_installCustomLogFunction$descriptor() {
         return Cap_installCustomLogFunction.DESC;
@@ -2487,9 +2636,9 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Downcall method handle for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * void Cap_installCustomLogFunction(CapCustomLogFunc logFunc)
-     * }
+     *}
      */
     public static MethodHandle Cap_installCustomLogFunction$handle() {
         return Cap_installCustomLogFunction.HANDLE;
@@ -2497,18 +2646,18 @@ public class openpnp_capture extends openpnp_capture$shared {
 
     /**
      * Address for:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * void Cap_installCustomLogFunction(CapCustomLogFunc logFunc)
-     * }
+     *}
      */
     public static MemorySegment Cap_installCustomLogFunction$address() {
         return Cap_installCustomLogFunction.ADDR;
     }
 
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * void Cap_installCustomLogFunction(CapCustomLogFunc logFunc)
-     * }
+     *}
      */
     public static void Cap_installCustomLogFunction(MemorySegment logFunc) {
         var mh$ = Cap_installCustomLogFunction.HANDLE;
@@ -2518,9 +2667,9 @@ public class openpnp_capture extends openpnp_capture$shared {
             }
             mh$.invokeExact(logFunc);
         } catch (Error | RuntimeException ex) {
-           throw ex;
+            throw ex;
         } catch (Throwable ex$) {
-           throw new AssertionError("should not reach here", ex$);
+            throw new AssertionError("should not reach here", ex$);
         }
     }
 
@@ -2582,524 +2731,640 @@ public class openpnp_capture extends openpnp_capture$shared {
             throw new AssertionError("should not reach here", ex$);
         }
     }
+
     private static final long _POSIX_C_SOURCE = 200809L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define _POSIX_C_SOURCE 200809
-     * }
+     *}
      */
     public static long _POSIX_C_SOURCE() {
         return _POSIX_C_SOURCE;
     }
-    private static final int __TIMESIZE = (int)64L;
+
+    private static final int __TIMESIZE = (int) 64L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __TIMESIZE 64
-     * }
+     *}
      */
     public static int __TIMESIZE() {
         return __TIMESIZE;
     }
+
     private static final long __STDC_IEC_60559_BFP__ = 201404L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __STDC_IEC_60559_BFP__ 201404
-     * }
+     *}
      */
     public static long __STDC_IEC_60559_BFP__() {
         return __STDC_IEC_60559_BFP__;
     }
+
     private static final long __STDC_IEC_60559_COMPLEX__ = 201404L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __STDC_IEC_60559_COMPLEX__ 201404
-     * }
+     *}
      */
     public static long __STDC_IEC_60559_COMPLEX__() {
         return __STDC_IEC_60559_COMPLEX__;
     }
+
     private static final long __STDC_ISO_10646__ = 201706L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __STDC_ISO_10646__ 201706
-     * }
+     *}
      */
     public static long __STDC_ISO_10646__() {
         return __STDC_ISO_10646__;
     }
-    private static final int __WCHAR_MAX = (int)2147483647L;
+
+    private static final int __WCHAR_MAX = (int) 2147483647L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __WCHAR_MAX 2147483647
-     * }
+     *}
      */
     public static int __WCHAR_MAX() {
         return __WCHAR_MAX;
     }
-    private static final int __WCHAR_MIN = (int)-2147483648L;
+
+    private static final int __WCHAR_MIN = (int) -2147483648L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define __WCHAR_MIN -2147483648
-     * }
+     *}
      */
     public static int __WCHAR_MIN() {
         return __WCHAR_MIN;
     }
-    private static final int INT8_MIN = (int)-128L;
+
+    private static final int INT8_MIN = (int) -128L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT8_MIN -128
-     * }
+     *}
      */
     public static int INT8_MIN() {
         return INT8_MIN;
     }
-    private static final int INT16_MIN = (int)-32768L;
+
+    private static final int INT16_MIN = (int) -32768L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT16_MIN -32768
-     * }
+     *}
      */
     public static int INT16_MIN() {
         return INT16_MIN;
     }
-    private static final int INT32_MIN = (int)-2147483648L;
+
+    private static final int INT32_MIN = (int) -2147483648L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT32_MIN -2147483648
-     * }
+     *}
      */
     public static int INT32_MIN() {
         return INT32_MIN;
     }
+
     private static final long INT64_MIN = -9223372036854775808L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT64_MIN -9223372036854775808
-     * }
+     *}
      */
     public static long INT64_MIN() {
         return INT64_MIN;
     }
-    private static final int INT8_MAX = (int)127L;
+
+    private static final int INT8_MAX = (int) 127L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT8_MAX 127
-     * }
+     *}
      */
     public static int INT8_MAX() {
         return INT8_MAX;
     }
-    private static final int INT16_MAX = (int)32767L;
+
+    private static final int INT16_MAX = (int) 32767L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT16_MAX 32767
-     * }
+     *}
      */
     public static int INT16_MAX() {
         return INT16_MAX;
     }
-    private static final int INT32_MAX = (int)2147483647L;
+
+    private static final int INT32_MAX = (int) 2147483647L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT32_MAX 2147483647
-     * }
+     *}
      */
     public static int INT32_MAX() {
         return INT32_MAX;
     }
+
     private static final long INT64_MAX = 9223372036854775807L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT64_MAX 9223372036854775807
-     * }
+     *}
      */
     public static long INT64_MAX() {
         return INT64_MAX;
     }
-    private static final int UINT8_MAX = (int)255L;
+
+    private static final int UINT8_MAX = (int) 255L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT8_MAX 255
-     * }
+     *}
      */
     public static int UINT8_MAX() {
         return UINT8_MAX;
     }
-    private static final int UINT16_MAX = (int)65535L;
+
+    private static final int UINT16_MAX = (int) 65535L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT16_MAX 65535
-     * }
+     *}
      */
     public static int UINT16_MAX() {
         return UINT16_MAX;
     }
-    private static final int UINT32_MAX = (int)4294967295L;
+
+    private static final int UINT32_MAX = (int) 4294967295L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT32_MAX 4294967295
-     * }
+     *}
      */
     public static int UINT32_MAX() {
         return UINT32_MAX;
     }
+
     private static final long UINT64_MAX = -1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT64_MAX -1
-     * }
+     *}
      */
     public static long UINT64_MAX() {
         return UINT64_MAX;
     }
-    private static final int INT_LEAST8_MIN = (int)-128L;
+
+    private static final int INT_LEAST8_MIN = (int) -128L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_LEAST8_MIN -128
-     * }
+     *}
      */
     public static int INT_LEAST8_MIN() {
         return INT_LEAST8_MIN;
     }
-    private static final int INT_LEAST16_MIN = (int)-32768L;
+
+    private static final int INT_LEAST16_MIN = (int) -32768L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_LEAST16_MIN -32768
-     * }
+     *}
      */
     public static int INT_LEAST16_MIN() {
         return INT_LEAST16_MIN;
     }
-    private static final int INT_LEAST32_MIN = (int)-2147483648L;
+
+    private static final int INT_LEAST32_MIN = (int) -2147483648L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_LEAST32_MIN -2147483648
-     * }
+     *}
      */
     public static int INT_LEAST32_MIN() {
         return INT_LEAST32_MIN;
     }
+
     private static final long INT_LEAST64_MIN = -9223372036854775808L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_LEAST64_MIN -9223372036854775808
-     * }
+     *}
      */
     public static long INT_LEAST64_MIN() {
         return INT_LEAST64_MIN;
     }
-    private static final int INT_LEAST8_MAX = (int)127L;
+
+    private static final int INT_LEAST8_MAX = (int) 127L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_LEAST8_MAX 127
-     * }
+     *}
      */
     public static int INT_LEAST8_MAX() {
         return INT_LEAST8_MAX;
     }
-    private static final int INT_LEAST16_MAX = (int)32767L;
+
+    private static final int INT_LEAST16_MAX = (int) 32767L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_LEAST16_MAX 32767
-     * }
+     *}
      */
     public static int INT_LEAST16_MAX() {
         return INT_LEAST16_MAX;
     }
-    private static final int INT_LEAST32_MAX = (int)2147483647L;
+
+    private static final int INT_LEAST32_MAX = (int) 2147483647L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_LEAST32_MAX 2147483647
-     * }
+     *}
      */
     public static int INT_LEAST32_MAX() {
         return INT_LEAST32_MAX;
     }
+
     private static final long INT_LEAST64_MAX = 9223372036854775807L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_LEAST64_MAX 9223372036854775807
-     * }
+     *}
      */
     public static long INT_LEAST64_MAX() {
         return INT_LEAST64_MAX;
     }
-    private static final int UINT_LEAST8_MAX = (int)255L;
+
+    private static final int UINT_LEAST8_MAX = (int) 255L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT_LEAST8_MAX 255
-     * }
+     *}
      */
     public static int UINT_LEAST8_MAX() {
         return UINT_LEAST8_MAX;
     }
-    private static final int UINT_LEAST16_MAX = (int)65535L;
+
+    private static final int UINT_LEAST16_MAX = (int) 65535L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT_LEAST16_MAX 65535
-     * }
+     *}
      */
     public static int UINT_LEAST16_MAX() {
         return UINT_LEAST16_MAX;
     }
-    private static final int UINT_LEAST32_MAX = (int)4294967295L;
+
+    private static final int UINT_LEAST32_MAX = (int) 4294967295L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT_LEAST32_MAX 4294967295
-     * }
+     *}
      */
     public static int UINT_LEAST32_MAX() {
         return UINT_LEAST32_MAX;
     }
+
     private static final long UINT_LEAST64_MAX = -1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT_LEAST64_MAX -1
-     * }
+     *}
      */
     public static long UINT_LEAST64_MAX() {
         return UINT_LEAST64_MAX;
     }
-    private static final int INT_FAST8_MIN = (int)-128L;
+
+    private static final int INT_FAST8_MIN = (int) -128L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_FAST8_MIN -128
-     * }
+     *}
      */
     public static int INT_FAST8_MIN() {
         return INT_FAST8_MIN;
     }
+
     private static final long INT_FAST16_MIN = -9223372036854775808L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_FAST16_MIN -9223372036854775808
-     * }
+     *}
      */
     public static long INT_FAST16_MIN() {
         return INT_FAST16_MIN;
     }
+
     private static final long INT_FAST32_MIN = -9223372036854775808L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_FAST32_MIN -9223372036854775808
-     * }
+     *}
      */
     public static long INT_FAST32_MIN() {
         return INT_FAST32_MIN;
     }
+
     private static final long INT_FAST64_MIN = -9223372036854775808L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_FAST64_MIN -9223372036854775808
-     * }
+     *}
      */
     public static long INT_FAST64_MIN() {
         return INT_FAST64_MIN;
     }
-    private static final int INT_FAST8_MAX = (int)127L;
+
+    private static final int INT_FAST8_MAX = (int) 127L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_FAST8_MAX 127
-     * }
+     *}
      */
     public static int INT_FAST8_MAX() {
         return INT_FAST8_MAX;
     }
+
     private static final long INT_FAST16_MAX = 9223372036854775807L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_FAST16_MAX 9223372036854775807
-     * }
+     *}
      */
     public static long INT_FAST16_MAX() {
         return INT_FAST16_MAX;
     }
+
     private static final long INT_FAST32_MAX = 9223372036854775807L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_FAST32_MAX 9223372036854775807
-     * }
+     *}
      */
     public static long INT_FAST32_MAX() {
         return INT_FAST32_MAX;
     }
+
     private static final long INT_FAST64_MAX = 9223372036854775807L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INT_FAST64_MAX 9223372036854775807
-     * }
+     *}
      */
     public static long INT_FAST64_MAX() {
         return INT_FAST64_MAX;
     }
-    private static final int UINT_FAST8_MAX = (int)255L;
+
+    private static final int UINT_FAST8_MAX = (int) 255L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT_FAST8_MAX 255
-     * }
+     *}
      */
     public static int UINT_FAST8_MAX() {
         return UINT_FAST8_MAX;
     }
+
     private static final long UINT_FAST16_MAX = -1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT_FAST16_MAX -1
-     * }
+     *}
      */
     public static long UINT_FAST16_MAX() {
         return UINT_FAST16_MAX;
     }
+
     private static final long UINT_FAST32_MAX = -1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT_FAST32_MAX -1
-     * }
+     *}
      */
     public static long UINT_FAST32_MAX() {
         return UINT_FAST32_MAX;
     }
+
     private static final long UINT_FAST64_MAX = -1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINT_FAST64_MAX -1
-     * }
+     *}
      */
     public static long UINT_FAST64_MAX() {
         return UINT_FAST64_MAX;
     }
+
     private static final long INTPTR_MIN = -9223372036854775808L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INTPTR_MIN -9223372036854775808
-     * }
+     *}
      */
     public static long INTPTR_MIN() {
         return INTPTR_MIN;
     }
+
     private static final long INTPTR_MAX = 9223372036854775807L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INTPTR_MAX 9223372036854775807
-     * }
+     *}
      */
     public static long INTPTR_MAX() {
         return INTPTR_MAX;
     }
+
     private static final long UINTPTR_MAX = -1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINTPTR_MAX -1
-     * }
+     *}
      */
     public static long UINTPTR_MAX() {
         return UINTPTR_MAX;
     }
+
     private static final long INTMAX_MIN = -9223372036854775808L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INTMAX_MIN -9223372036854775808
-     * }
+     *}
      */
     public static long INTMAX_MIN() {
         return INTMAX_MIN;
     }
+
     private static final long INTMAX_MAX = 9223372036854775807L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define INTMAX_MAX 9223372036854775807
-     * }
+     *}
      */
     public static long INTMAX_MAX() {
         return INTMAX_MAX;
     }
+
     private static final long UINTMAX_MAX = -1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define UINTMAX_MAX -1
-     * }
+     *}
      */
     public static long UINTMAX_MAX() {
         return UINTMAX_MAX;
     }
+
     private static final long PTRDIFF_MIN = -9223372036854775808L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define PTRDIFF_MIN -9223372036854775808
-     * }
+     *}
      */
     public static long PTRDIFF_MIN() {
         return PTRDIFF_MIN;
     }
+
     private static final long PTRDIFF_MAX = 9223372036854775807L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define PTRDIFF_MAX 9223372036854775807
-     * }
+     *}
      */
     public static long PTRDIFF_MAX() {
         return PTRDIFF_MAX;
     }
-    private static final int SIG_ATOMIC_MIN = (int)-2147483648L;
+
+    private static final int SIG_ATOMIC_MIN = (int) -2147483648L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define SIG_ATOMIC_MIN -2147483648
-     * }
+     *}
      */
     public static int SIG_ATOMIC_MIN() {
         return SIG_ATOMIC_MIN;
     }
-    private static final int SIG_ATOMIC_MAX = (int)2147483647L;
+
+    private static final int SIG_ATOMIC_MAX = (int) 2147483647L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define SIG_ATOMIC_MAX 2147483647
-     * }
+     *}
      */
     public static int SIG_ATOMIC_MAX() {
         return SIG_ATOMIC_MAX;
     }
+
     private static final long SIZE_MAX = -1L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define SIZE_MAX -1
-     * }
+     *}
      */
     public static long SIZE_MAX() {
         return SIZE_MAX;
     }
-    private static final int WCHAR_MIN = (int)-2147483648L;
+
+    private static final int WCHAR_MIN = (int) -2147483648L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define WCHAR_MIN -2147483648
-     * }
+     *}
      */
     public static int WCHAR_MIN() {
         return WCHAR_MIN;
     }
-    private static final int WCHAR_MAX = (int)2147483647L;
+
+    private static final int WCHAR_MAX = (int) 2147483647L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define WCHAR_MAX 2147483647
-     * }
+     *}
      */
     public static int WCHAR_MAX() {
         return WCHAR_MAX;
     }
-    private static final int WINT_MIN = (int)0L;
+
+    private static final int WINT_MIN = (int) 0L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define WINT_MIN 0
-     * }
+     *}
      */
     public static int WINT_MIN() {
         return WINT_MIN;
     }
-    private static final int WINT_MAX = (int)4294967295L;
+
+    private static final int WINT_MAX = (int) 4294967295L;
+
     /**
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * #define WINT_MAX 4294967295
-     * }
+     *}
      */
     public static int WINT_MAX() {
         return WINT_MAX;
