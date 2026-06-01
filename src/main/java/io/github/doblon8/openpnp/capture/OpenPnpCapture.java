@@ -29,7 +29,8 @@ public class OpenPnpCapture implements AutoCloseable {
         List<CaptureDevice> devices = new ArrayList<>(deviceCount);
         for (int i = 0; i < deviceCount; i++) {
             String deviceName = getDeviceName(i);
-            devices.add(new CaptureDevice(i, deviceName));
+            String deviceUniqueId = getDeviceUniqueId(i);
+            devices.add(new CaptureDevice(i, deviceName, deviceUniqueId));
         }
         return devices;
     }
@@ -55,6 +56,22 @@ public class OpenPnpCapture implements AutoCloseable {
      */
     public String getDeviceName(int id) {
         MemorySegment stringPointer = Cap_getDeviceName(context.getSegment(), id);
+        return stringPointer.equals(MemorySegment.NULL) ? null : stringPointer.getString(0);
+    }
+
+    /**
+     * Get the unique name of a capture device.
+     * <p>
+     * The string contains a unique concatenation of the device name and other parameters.
+     * These parameters are platform dependent.
+     * <p>
+     * If a device with the given id does not exist, null is returned.
+     *
+     * @param id the device id of the capture device
+     * @return the unique name of the capture device, or null if no device with the given id exists.
+     */
+    public String getDeviceUniqueId(int id) {
+        MemorySegment stringPointer = Cap_getDeviceUniqueID(context.getSegment(), id);
         return stringPointer.equals(MemorySegment.NULL) ? null : stringPointer.getString(0);
     }
 

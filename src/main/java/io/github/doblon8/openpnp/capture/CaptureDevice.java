@@ -1,4 +1,4 @@
 package io.github.doblon8.openpnp.capture;
 
-public record CaptureDevice(int id, String name) {
+public record CaptureDevice(int id, String name, String uniqueId) {
 }
