@@ -4,7 +4,6 @@ package io.github.doblon8.openpnp.capture.bindings;
 
 import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
@@ -13,7 +12,7 @@ import static java.lang.foreign.ValueLayout.*;
 import static java.lang.foreign.MemoryLayout.PathElement.*;
 
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * struct {
  *     uint32_t width;
  *     uint32_t height;
@@ -21,7 +20,7 @@ import static java.lang.foreign.MemoryLayout.PathElement.*;
  *     uint32_t fps;
  *     uint32_t bpp;
  * }
- * }
+ *}
  */
 public class CapFormatInfo {
 
@@ -30,11 +29,11 @@ public class CapFormatInfo {
     }
 
     private static final GroupLayout $LAYOUT = MemoryLayout.structLayout(
-        openpnp_capture.C_INT.withName("width"),
-        openpnp_capture.C_INT.withName("height"),
-        openpnp_capture.C_INT.withName("fourcc"),
-        openpnp_capture.C_INT.withName("fps"),
-        openpnp_capture.C_INT.withName("bpp")
+            openpnp_capture.C_INT.withName("width"),
+            openpnp_capture.C_INT.withName("height"),
+            openpnp_capture.C_INT.withName("fourcc"),
+            openpnp_capture.C_INT.withName("fps"),
+            openpnp_capture.C_INT.withName("bpp")
     ).withName("$anon$96:9");
 
     /**
@@ -44,13 +43,13 @@ public class CapFormatInfo {
         return $LAYOUT;
     }
 
-    private static final OfInt width$LAYOUT = (OfInt)$LAYOUT.select(groupElement("width"));
+    private static final OfInt width$LAYOUT = (OfInt) $LAYOUT.select(groupElement("width"));
 
     /**
      * Layout for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t width
-     * }
+     *}
      */
     public static final OfInt width$layout() {
         return width$LAYOUT;
@@ -60,9 +59,9 @@ public class CapFormatInfo {
 
     /**
      * Offset for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t width
-     * }
+     *}
      */
     public static final long width$offset() {
         return width$OFFSET;
@@ -70,9 +69,9 @@ public class CapFormatInfo {
 
     /**
      * Getter for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t width
-     * }
+     *}
      */
     public static int width(MemorySegment struct) {
         return struct.get(width$LAYOUT, width$OFFSET);
@@ -80,21 +79,21 @@ public class CapFormatInfo {
 
     /**
      * Setter for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t width
-     * }
+     *}
      */
     public static void width(MemorySegment struct, int fieldValue) {
         struct.set(width$LAYOUT, width$OFFSET, fieldValue);
     }
 
-    private static final OfInt height$LAYOUT = (OfInt)$LAYOUT.select(groupElement("height"));
+    private static final OfInt height$LAYOUT = (OfInt) $LAYOUT.select(groupElement("height"));
 
     /**
      * Layout for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t height
-     * }
+     *}
      */
     public static final OfInt height$layout() {
         return height$LAYOUT;
@@ -104,9 +103,9 @@ public class CapFormatInfo {
 
     /**
      * Offset for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t height
-     * }
+     *}
      */
     public static final long height$offset() {
         return height$OFFSET;
@@ -114,9 +113,9 @@ public class CapFormatInfo {
 
     /**
      * Getter for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t height
-     * }
+     *}
      */
     public static int height(MemorySegment struct) {
         return struct.get(height$LAYOUT, height$OFFSET);
@@ -124,21 +123,21 @@ public class CapFormatInfo {
 
     /**
      * Setter for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t height
-     * }
+     *}
      */
     public static void height(MemorySegment struct, int fieldValue) {
         struct.set(height$LAYOUT, height$OFFSET, fieldValue);
     }
 
-    private static final OfInt fourcc$LAYOUT = (OfInt)$LAYOUT.select(groupElement("fourcc"));
+    private static final OfInt fourcc$LAYOUT = (OfInt) $LAYOUT.select(groupElement("fourcc"));
 
     /**
      * Layout for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t fourcc
-     * }
+     *}
      */
     public static final OfInt fourcc$layout() {
         return fourcc$LAYOUT;
@@ -148,9 +147,9 @@ public class CapFormatInfo {
 
     /**
      * Offset for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t fourcc
-     * }
+     *}
      */
     public static final long fourcc$offset() {
         return fourcc$OFFSET;
@@ -158,9 +157,9 @@ public class CapFormatInfo {
 
     /**
      * Getter for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t fourcc
-     * }
+     *}
      */
     public static int fourcc(MemorySegment struct) {
         return struct.get(fourcc$LAYOUT, fourcc$OFFSET);
@@ -168,21 +167,21 @@ public class CapFormatInfo {
 
     /**
      * Setter for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t fourcc
-     * }
+     *}
      */
     public static void fourcc(MemorySegment struct, int fieldValue) {
         struct.set(fourcc$LAYOUT, fourcc$OFFSET, fieldValue);
     }
 
-    private static final OfInt fps$LAYOUT = (OfInt)$LAYOUT.select(groupElement("fps"));
+    private static final OfInt fps$LAYOUT = (OfInt) $LAYOUT.select(groupElement("fps"));
 
     /**
      * Layout for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t fps
-     * }
+     *}
      */
     public static final OfInt fps$layout() {
         return fps$LAYOUT;
@@ -192,9 +191,9 @@ public class CapFormatInfo {
 
     /**
      * Offset for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t fps
-     * }
+     *}
      */
     public static final long fps$offset() {
         return fps$OFFSET;
@@ -202,9 +201,9 @@ public class CapFormatInfo {
 
     /**
      * Getter for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t fps
-     * }
+     *}
      */
     public static int fps(MemorySegment struct) {
         return struct.get(fps$LAYOUT, fps$OFFSET);
@@ -212,21 +211,21 @@ public class CapFormatInfo {
 
     /**
      * Setter for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t fps
-     * }
+     *}
      */
     public static void fps(MemorySegment struct, int fieldValue) {
         struct.set(fps$LAYOUT, fps$OFFSET, fieldValue);
     }
 
-    private static final OfInt bpp$LAYOUT = (OfInt)$LAYOUT.select(groupElement("bpp"));
+    private static final OfInt bpp$LAYOUT = (OfInt) $LAYOUT.select(groupElement("bpp"));
 
     /**
      * Layout for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t bpp
-     * }
+     *}
      */
     public static final OfInt bpp$layout() {
         return bpp$LAYOUT;
@@ -236,9 +235,9 @@ public class CapFormatInfo {
 
     /**
      * Offset for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t bpp
-     * }
+     *}
      */
     public static final long bpp$offset() {
         return bpp$OFFSET;
@@ -246,9 +245,9 @@ public class CapFormatInfo {
 
     /**
      * Getter for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t bpp
-     * }
+     *}
      */
     public static int bpp(MemorySegment struct) {
         return struct.get(bpp$LAYOUT, bpp$OFFSET);
@@ -256,9 +255,9 @@ public class CapFormatInfo {
 
     /**
      * Setter for field:
-     * {@snippet lang=c :
+     * {@snippet lang = c:
      * uint32_t bpp
-     * }
+     *}
      */
     public static void bpp(MemorySegment struct, int fieldValue) {
         struct.set(bpp$LAYOUT, bpp$OFFSET, fieldValue);
@@ -275,7 +274,9 @@ public class CapFormatInfo {
     /**
      * The size (in bytes) of this struct
      */
-    public static long sizeof() { return layout().byteSize(); }
+    public static long sizeof() {
+        return layout().byteSize();
+    }
 
     /**
      * Allocate a segment of size {@code layout().byteSize()} using {@code allocator}

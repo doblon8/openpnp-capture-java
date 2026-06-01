@@ -4,18 +4,14 @@ package io.github.doblon8.openpnp.capture.bindings;
 
 import java.lang.invoke.*;
 import java.lang.foreign.*;
-import java.nio.ByteOrder;
 import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
-import static java.lang.foreign.ValueLayout.*;
-import static java.lang.foreign.MemoryLayout.PathElement.*;
-
 /**
- * {@snippet lang=c :
+ * {@snippet lang = c:
  * typedef void (*CapCustomLogFunc)(uint32_t, const char *)
- * }
+ *}
  */
 public final class CapCustomLogFunc {
 
@@ -31,8 +27,8 @@ public final class CapCustomLogFunc {
     }
 
     private static final FunctionDescriptor $DESC = FunctionDescriptor.ofVoid(
-        openpnp_capture.C_INT,
-        openpnp_capture.C_POINTER
+            openpnp_capture.C_INT,
+            openpnp_capture.C_POINTER
     );
 
     /**
@@ -59,7 +55,7 @@ public final class CapCustomLogFunc {
      */
     public static void invoke(MemorySegment funcPtr, int level, MemorySegment string) {
         try {
-             DOWN$MH.invokeExact(funcPtr, level, string);
+            DOWN$MH.invokeExact(funcPtr, level, string);
         } catch (Error | RuntimeException ex) {
             throw ex;
         } catch (Throwable ex$) {
