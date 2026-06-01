@@ -9,7 +9,7 @@ void main() {
     var version = OpenPnpCapture.getLibraryVersion();
     System.out.println("OpenPnP Capture Library Version: " + version);
 
-    setLogLevel(LogLevel.ERROR);
+    setLogLevel(LogLevel.DEBUG);
     installCustomLogFunction((logLevel, message) -> System.out.println("Custom Log [" + logLevel + "]: " + message));
 
     try (var capture = new OpenPnpCapture()) {
@@ -17,6 +17,10 @@ void main() {
         var device = capture.getDevices().getFirst();
         var format = device.getFormats().getFirst();
         System.out.println("Using device '" + device.getName() + "' with format " + format);
+
+        try (var stream = device.openStream(format)) {
+            System.out.println("Stream is open: " + stream.isOpen());
+        }
     } catch (CaptureException e) {
         System.err.println("Error using CaptureContext: " + e.getMessage());
     }

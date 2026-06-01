@@ -3,7 +3,7 @@ package io.github.doblon8.openpnp.capture;
 import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.Cap_closeStream;
 import static io.github.doblon8.openpnp.capture.bindings.openpnp_capture.Cap_isOpenStream;
 
-public class CaptureStream {
+public class CaptureStream implements AutoCloseable {
     private final CaptureContext context;
     private final int id;
 
@@ -27,6 +27,7 @@ public class CaptureStream {
      *
      * @throws CaptureException if an error occurs while closing the capture stream.
      */
+    @Override
     public void close() {
         int result = Cap_closeStream(context.getSegment(), id);
         CaptureResult captureResult = CaptureResult.values()[result];
