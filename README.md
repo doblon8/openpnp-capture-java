@@ -47,8 +47,8 @@ void main() throws Exception {
         try (var stream = device.openStream(format)) {
             TimeUnit.SECONDS.sleep(1); // let the camera initialize
 
-            var zoomLimits = stream.getPropertyLimits(CaptureProperty.ZOOM);
-            System.out.println("Zoom limits: " + zoomLimits);
+            var exposureLimits = stream.getPropertyLimits(CaptureProperty.EXPOSURE);
+            System.out.println("Exposure limits: " + exposureLimits);
 
             var image = stream.capture();
             ImageIO.write(image, "png", new File("/tmp/image.png"));
