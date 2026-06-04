@@ -2,13 +2,11 @@ import io.github.doblon8.openpnp.capture.*;
 
 import javax.imageio.ImageIO;
 
-import static io.github.doblon8.openpnp.capture.OpenPnpCapture.*;
-
 void main() throws Exception {
     System.out.println("openpnp-capture version: " + OpenPnpCapture.getLibraryVersion());
 
-    setLogLevel(LogLevel.INFO);
-    installCustomLogFunction((logLevel, message) -> System.out.println("Log [" + logLevel + "]: " + message));
+    OpenPnpCapture.setLogLevel(LogLevel.INFO);
+    OpenPnpCapture.installCustomLogFunction((logLevel, message) -> System.out.println("Log [" + logLevel + "]: " + message));
 
     try (var capture = new OpenPnpCapture()) {
         var device = capture.getDevices().stream()
