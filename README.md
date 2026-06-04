@@ -27,8 +27,6 @@ import io.github.doblon8.openpnp.capture.*;
 
 import javax.imageio.ImageIO;
 
-import static io.github.doblon8.openpnp.capture.OpenPnpCapture.*;
-
 void main() throws Exception {
 	System.out.println("openpnp-capture version: " + OpenPnpCapture.getLibraryVersion());
 
