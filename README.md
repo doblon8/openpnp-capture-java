@@ -1,6 +1,6 @@
 # openpnp-capture-java
 
-Java Foreign Function & Memory bindings for [openpnp-capture](https://github.com/openpnp/openpnp-capture).
+Java Foreign Function & Memory bindings for [OpenPnP Capture](https://github.com/openpnp/openpnp-capture).
 
 ## Installation
 

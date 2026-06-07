@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <name>https://github.com/doblon8/openpnp-capture-java</name>
-    <description>Java Foreign Function and Memory bindings for openpnp-capture</description>
+    <description>Java Foreign Function and Memory bindings for OpenPnP Capture</description>
     <url>https://github.com/doblon8/openpnp-capture-java</url>
 
     <licenses>
