@@ -12,7 +12,7 @@ To add `openpnp-capture-java` as a dependency using Maven, include the following
 <dependency>
   <groupId>io.github.doblon8</groupId>
   <artifactId>openpnp-capture-java</artifactId>
-  <version>0.0.1</version>
+  <version>0.0.2</version>
 </dependency>
 ```
 
