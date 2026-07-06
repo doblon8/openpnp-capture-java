@@ -24,9 +24,9 @@ public class NativeLoader {
 
         String basePath = "/native/" + os + "/" + arch + "/";
         String library = switch (os) {
-            case "linux" -> "libopenpnp-capture-ubuntu-20.04-" + arch + ".so";
-            case "osx" -> "libopenpnp-capture-macos-latest-" + arch + ".dylib";
-            case "windows" -> "libopenpnp-capture-windows-latest-" + arch + ".dll";
+            case "linux" -> "libopenpnp-capture.so";
+            case "osx" -> "libopenpnp-capture.dylib";
+            case "windows" -> "openpnp-capture.dll";
             default -> throw new UnsupportedOperationException("Unknown OS: " + os);
         };
 
@@ -114,9 +114,9 @@ public class NativeLoader {
     private static String getArchName() {
         String arch = System.getProperty("os.arch").toLowerCase();
         if (arch.contains("aarch64") || arch.contains("arm64")) {
-            return "arm64";
+            return "aarch64";
         } else if (arch.contains("amd64") || arch.contains("x86_64")) {
-            return "x86_64";
+            return "x64";
         } else {
             throw new UnsupportedOperationException("Unsupported architecture: " + arch);
         }
