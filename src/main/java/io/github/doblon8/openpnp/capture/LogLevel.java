@@ -9,5 +9,14 @@ public enum LogLevel {
     NOTICE,
     INFO,
     DEBUG,
-    VERBOSE,
+    VERBOSE;
+
+    private static final LogLevel[] VALUES = values();
+
+    public static LogLevel fromNative(int value) {
+        if (value < 0 || value >= VALUES.length) {
+            throw new IllegalArgumentException("Unknown log level: " + value);
+        }
+        return VALUES[value];
+    }
 }

@@ -33,7 +33,7 @@ public class CaptureStream implements AutoCloseable {
             MemorySegment bufferPointer = arena.allocate(ValueLayout.JAVA_BYTE, numBytes);
 
             int result = Cap_captureFrame(context.getSegment(), id, bufferPointer, numBytes);
-            CaptureResult captureResult = CaptureResult.values()[result];
+            CaptureResult captureResult = CaptureResult.fromNative(result);
             if (captureResult != CaptureResult.OK) {
                 throw new CaptureException("Error capturing frame: " + result);
             }
@@ -87,7 +87,7 @@ public class CaptureStream implements AutoCloseable {
             MemorySegment defaultValuePointer = arena.allocate(ValueLayout.JAVA_INT);
 
             int result = Cap_getPropertyLimits(context.getSegment(), id, property.value(), minPointer, maxPointer, defaultValuePointer);
-            CaptureResult captureResult = CaptureResult.values()[result];
+            CaptureResult captureResult = CaptureResult.fromNative(result);
             return switch (captureResult) {
                 case OK -> new PropertyLimits(
                         minPointer.get(ValueLayout.JAVA_INT, 0),
@@ -112,7 +112,7 @@ public class CaptureStream implements AutoCloseable {
         try (Arena arena = Arena.ofConfined()) {
             MemorySegment valuePointer = arena.allocate(ValueLayout.JAVA_INT);
             int result = Cap_getProperty(context.getSegment(), id, property.value(), valuePointer);
-            CaptureResult captureResult = CaptureResult.values()[result];
+            CaptureResult captureResult = CaptureResult.fromNative(result);
             return switch (captureResult) {
                 case OK -> valuePointer.get(ValueLayout.JAVA_INT, 0);
                 case PROPERTY_NOT_SUPPORTED -> throw new CaptureException("Property " + property + " is not supported by this stream.");
@@ -130,7 +130,7 @@ public class CaptureStream implements AutoCloseable {
      */
     public void setProperty(CaptureProperty property, int value) {
         int result =  Cap_setProperty(context.getSegment(), id, property.value(), value);
-        CaptureResult captureResult = CaptureResult.values()[result];
+        CaptureResult captureResult = CaptureResult.fromNative(result);
         switch (captureResult) {
             case OK -> {}
             case PROPERTY_NOT_SUPPORTED -> throw new CaptureException("Property " + property + " is not supported by this stream.");
@@ -149,7 +149,7 @@ public class CaptureStream implements AutoCloseable {
         try (Arena arena = Arena.ofConfined()) {
             MemorySegment valuePointer = arena.allocate(ValueLayout.JAVA_INT);
             int result = Cap_getAutoProperty(context.getSegment(), id, property.value(), valuePointer);
-            CaptureResult captureResult = CaptureResult.values()[result];
+            CaptureResult captureResult = CaptureResult.fromNative(result);
             return switch (captureResult) {
                 case OK -> valuePointer.get(ValueLayout.JAVA_INT, 0) == 1;
                 case PROPERTY_NOT_SUPPORTED -> throw new CaptureException("Property " + property + " is not supported by this stream.");
@@ -167,7 +167,7 @@ public class CaptureStream implements AutoCloseable {
      */
     public void setAutoProperty(CaptureProperty property, boolean enable) {
             int result = Cap_setAutoProperty(context.getSegment(), id, property.value(), enable ? 1 : 0);
-            CaptureResult captureResult = CaptureResult.values()[result];
+            CaptureResult captureResult = CaptureResult.fromNative(result);
             switch (captureResult) {
                 case OK -> {}
                 case PROPERTY_NOT_SUPPORTED -> throw new CaptureException("Property " + property + " is not supported by this stream.");
@@ -193,7 +193,7 @@ public class CaptureStream implements AutoCloseable {
     @Override
     public void close() {
         int result = Cap_closeStream(context.getSegment(), id);
-        CaptureResult captureResult = CaptureResult.values()[result];
+        CaptureResult captureResult = CaptureResult.fromNative(result);
         if (captureResult != CaptureResult.OK) {
             throw new CaptureException("Error closing capture stream: " + result);
         }

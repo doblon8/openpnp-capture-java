@@ -59,7 +59,7 @@ public class OpenPnpCapture implements AutoCloseable {
      */
     public static void installCustomLogFunction(BiConsumer<LogLevel, String> logFunction) {
         MemorySegment functionPointer = CapCustomLogFunc.allocate((level, stringPointer) ->
-                logFunction.accept(LogLevel.values()[level], stringPointer.getString(0)), arena);
+                logFunction.accept(LogLevel.fromNative(level), stringPointer.getString(0)), arena);
         Cap_installCustomLogFunction(functionPointer);
     }
 

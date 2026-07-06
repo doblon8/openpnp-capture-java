@@ -104,7 +104,7 @@ public final class CaptureDevice {
         try (Arena arena = Arena.ofConfined()) {
             MemorySegment formatInfoSegment = CapFormatInfo.allocate(arena);
             int result = Cap_getFormatInfo(context.getSegment(), deviceId, formatId, formatInfoSegment);
-            CaptureResult captureResult = CaptureResult.values()[result];
+            CaptureResult captureResult = CaptureResult.fromNative(result);
             if (captureResult == CaptureResult.OK) {
                 return new CaptureFormatInfo(formatInfoSegment);
             }
