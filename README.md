@@ -18,7 +18,7 @@ To add `openpnp-capture-java` as a dependency using Maven, include the following
 
 For other build tools, retrieve the dependency from Maven Central using the same coordinates.
 
-`openpnp-capture-java` bundles the native `openpnp-capture` library for supported platforms, so no system-wide installation is required.
+`openpnp-capture-java` bundles the native `openpnp-capture` libraries for supported platforms, sourced from the [sparrowwallet/openpnp-capture](https://github.com/sparrowwallet/openpnp-capture) repository, so no system-wide installation is required.
 
 ## Example
 
